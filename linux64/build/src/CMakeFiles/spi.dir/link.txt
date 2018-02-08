@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC   -shared -Wl,-soname,libspi.so.1 -o ../../lib/libspi.so.1.2 CMakeFiles/spi.dir/spi.cpp.o 

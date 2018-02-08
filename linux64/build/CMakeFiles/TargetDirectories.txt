@@ -1,0 +1,7 @@
+/home/huziang/Desktop/WQ-my-code/api/linux64/build/CMakeFiles/edit_cache.dir
+/home/huziang/Desktop/WQ-my-code/api/linux64/build/CMakeFiles/rebuild_cache.dir
+/home/huziang/Desktop/WQ-my-code/api/linux64/build/src/CMakeFiles/edit_cache.dir
+/home/huziang/Desktop/WQ-my-code/api/linux64/build/src/CMakeFiles/spi.dir
+/home/huziang/Desktop/WQ-my-code/api/linux64/build/src/CMakeFiles/spi_static.dir
+/home/huziang/Desktop/WQ-my-code/api/linux64/build/src/CMakeFiles/main.dir
+/home/huziang/Desktop/WQ-my-code/api/linux64/build/src/CMakeFiles/rebuild_cache.dir

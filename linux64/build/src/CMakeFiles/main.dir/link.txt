@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/main.dir/main.cpp.o  -o ../../bin/main  -L/home/huziang/Desktop/WQ-my-code/api/linux64/lib -lthostmduserapi -lthosttraderapi ../../lib/libspi.so.1.2 -Wl,-rpath,/home/huziang/Desktop/WQ-my-code/api/linux64/lib 

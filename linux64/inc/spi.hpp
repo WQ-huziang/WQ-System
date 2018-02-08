@@ -1,10 +1,13 @@
 #ifndef _SPI_
 #define _SPI_
 
-#include "../ThostFtdcMdApi.h"
+#include "ThostFtdcMdApi.h"
+#include "ThostFtdcTraderApi.h"
+#include "ThostFtdcUserApiDataType.h"
+#include "ThostFtdcUserApiStruct.h"
 
 // MdSpi类的实现
-class MdCompleteSpi : public MdCompleteSpi {
+class MdCompleteSpi : public CThostFtdcMdSpi {
 public:
 	///当客户端与交易后台建立起通信连接时（还未登录前），该方法被调用。
 	void OnFrontConnected();

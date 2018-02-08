@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../inc/ThostFtdcMdApi.h
+ThostFtdcUserApiStruct.h
+../inc/ThostFtdcUserApiStruct.h
+
+../inc/ThostFtdcTraderApi.h
+ThostFtdcUserApiStruct.h
+../inc/ThostFtdcUserApiStruct.h
+
+../inc/ThostFtdcUserApiDataType.h
+
+../inc/ThostFtdcUserApiStruct.h
+ThostFtdcUserApiDataType.h
+../inc/ThostFtdcUserApiDataType.h
+
+../inc/spi.h
+ThostFtdcMdApi.h
+../inc/ThostFtdcMdApi.h
+ThostFtdcTraderApi.h
+../inc/ThostFtdcTraderApi.h
+ThostFtdcUserApiDataType.h
+../inc/ThostFtdcUserApiDataType.h
+ThostFtdcUserApiStruct.h
+../inc/ThostFtdcUserApiStruct.h
+
+/home/huziang/Desktop/WQ-my-code/api/linux64/src/spi.c
+spi.h
+/home/huziang/Desktop/WQ-my-code/api/linux64/src/spi.h
+iostream
+-
+
