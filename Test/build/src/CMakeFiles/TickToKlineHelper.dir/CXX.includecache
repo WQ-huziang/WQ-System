@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../inc/ThostFtdcUserApiDataType.h
+
+../inc/ThostFtdcUserApiStruct.h
+ThostFtdcUserApiDataType.h
+../inc/ThostFtdcUserApiDataType.h
+
+../inc/TickToKlineHelper.h
+vector
+-
+string
+-
+
+/home/huziang/Desktop/api/Test/src/TickToKlineHelper.cpp
+iostream
+-
+fstream
+-
+sstream
+-
+string
+-
+algorithm
+-
+ThostFtdcUserApiStruct.h
+/home/huziang/Desktop/api/Test/src/ThostFtdcUserApiStruct.h
+TickToKlineHelper.h
+/home/huziang/Desktop/api/Test/src/TickToKlineHelper.h
+

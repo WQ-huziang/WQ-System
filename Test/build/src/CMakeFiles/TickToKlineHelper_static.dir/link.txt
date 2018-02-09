@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libTickToKlineHelper.a  CMakeFiles/TickToKlineHelper_static.dir/TickToKlineHelper.cpp.o
+/usr/bin/ranlib ../../lib/libTickToKlineHelper.a

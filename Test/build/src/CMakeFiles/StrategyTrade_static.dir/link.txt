@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libStrategyTrade.a  CMakeFiles/StrategyTrade_static.dir/StrategyTrade.cpp.o
+/usr/bin/ranlib ../../lib/libStrategyTrade.a

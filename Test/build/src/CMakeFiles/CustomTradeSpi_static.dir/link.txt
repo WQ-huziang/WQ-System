@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libCustomTradeSpi.a  CMakeFiles/CustomTradeSpi_static.dir/CustomTradeSpi.cpp.o
+/usr/bin/ranlib ../../lib/libCustomTradeSpi.a
