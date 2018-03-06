@@ -1,4 +1,4 @@
-SET(CLASS_FILE CustomMdSpi CustomTradeSpi StrategyTrade TickToKlineHelper)
+SET(CLASS_FILE CustomMd CustomTd)
 SET(MAIN_FILE main)
 SET(CTP_SO thostmduserapi thosttraderapi)
 

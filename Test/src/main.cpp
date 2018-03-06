@@ -2,67 +2,66 @@
 #include <stdio.h>
 #include <string>
 #include <unordered_map>
-#include "CustomMdSpi.h"
-#include "CustomTradeSpi.h"
-#include "TickToKlineHelper.h"
+#include "ThostFtdcUserApiStruct.h"
+#include "ThostFtdcUserApiDataType.h"
+#include "CustomMd.h"
+// #include "CustomTradeSpi.h"
+// #include "TickToKlineHelper.h"
 
 using namespace std;
 
-// 链接库
-#pragma comment (lib, "thostmduserapi.lib")
-#pragma comment (lib, "thosttraderapi.lib")
+// Global value
+// public value
+char dataDicPath[100] = "data/";                                   // data's dictionary path
+TThostFtdcBrokerIDType gCompanyID = "9999";                        // company ID
+TThostFtdcInvestorIDType gUserID = "";                             // user ID
+TThostFtdcPasswordType gUserPassword = "";                         // user password
 
-// ---- 全局变量 ---- //
-// 公共参数
-TThostFtdcBrokerIDType gBrokerID = "9999";                         // 模拟经纪商代码
-TThostFtdcInvestorIDType gInvesterID = "";                         // 投资者账户名
-TThostFtdcPasswordType gInvesterPassword = "";                     // 投资者密码
+// MD value
+CThostFtdcMdApi *gp_MdUserApi = nullptr;                           // Md api's pointer
+char gp_MdFrontAddr[] = "tcp://180.168.146.187:10011";             // Md front address
+char *gp_InstrumentID[] = {"AP805"};                               // stock ID
+int instrumentNum = 1;                                             // number of stock ID
+// unordered_map<string, TickToKlineHelper> g_KlineHash;              // 
 
-// 行情参数
-CThostFtdcMdApi *g_pMdUserApi = nullptr;                           // 行情指针
-char gMdFrontAddr[] = "tcp://180.168.146.187:10010";               // 模拟行情前置地址
-char *g_pInstrumentID[] = {"TF1706", "zn1705", "cs1801", "CF705"}; // 行情合约代码列表，中、上、大、郑交易所各选一种
-int instrumentNum = 4;                                             // 行情合约订阅数量
-unordered_map<string, TickToKlineHelper> g_KlineHash;              // 不同合约的k线存储表
-
-// 交易参数
-CThostFtdcTraderApi *g_pTradeUserApi = nullptr;                    // 交易指针
-char gTradeFrontAddr[] = "tcp://180.168.146.187:10001";            // 模拟交易前置地址
-TThostFtdcInstrumentIDType g_pTradeInstrumentID = "zn1705";        // 所交易的合约代码
-TThostFtdcDirectionType gTradeDirection = THOST_FTDC_D_Sell;       // 买卖方向
-TThostFtdcPriceType gLimitPrice = 22735;                           // 交易价格
+// // Td value
+// CThostFtdcTraderApi *g_pTradeUserApi = nullptr;                    // 
+// char gTradeFrontAddr[] = "tcp://180.168.146.187:10001";            // 
+// TThostFtdcInstrumentIDType g_pTradeInstrumentID = "zn1705";        // 
+// TThostFtdcDirectionType gTradeDirection = THOST_FTDC_D_Sell;       // 
+// TThostFtdcPriceType gLimitPrice = 22735;                           // 
 
 int main()
 {
-	// 账号密码
-	cout << "请输入账号： ";
-	scanf("%s", gInvesterID);
-	cout << "请输入密码： ";
-	scanf("%s", gInvesterPassword);
+	// input ID and password
+	cout << "Please input your ID: ";
+	scanf("%s", gUserID);
+	cout << "Please input your password: ";
+	scanf("%s", gUserPassword);
 
-	// 初始化行情线程
-	cout << "初始化行情..." << endl;
-	g_pMdUserApi = CThostFtdcMdApi::CreateFtdcMdApi();   // 创建行情实例
-	CThostFtdcMdSpi *pMdUserSpi = new CustomMdSpi;       // 创建行情回调实例
-	g_pMdUserApi->RegisterSpi(pMdUserSpi);               // 注册事件类
-	g_pMdUserApi->RegisterFront(gMdFrontAddr);           // 设置行情前置地址
-	g_pMdUserApi->Init();                                // 连接运行
+	// Initialize Md
+	cout << "Initialize market description..." << endl;
+	gp_MdUserApi = CThostFtdcMdApi::CreateFtdcMdApi();
+	CThostFtdcMdSpi *pMdUserSpi = new CustomMdSpi;       // 麓麓陆篓脨脨脟茅禄脴碌梅脢碌脌媒
+	g_pMdUserApi->RegisterSpi(pMdUserSpi);               // 脳垄虏谩脢脗录镁脌脿
+	g_pMdUserApi->RegisterFront(gMdFrontAddr);           // 脡猫脰脙脨脨脟茅脟掳脰脙碌脴脰路
+	g_pMdUserApi->Init();                                // 脕卢陆脫脭脣脨脨
 	
 
 
-	// 初始化交易线程
-	cout << "初始化交易..." << endl;
-	g_pTradeUserApi = CThostFtdcTraderApi::CreateFtdcTraderApi(); // 创建交易实例
+	// 鲁玫脢录禄炉陆禄脪脳脧脽鲁脤
+	cout << "鲁玫脢录禄炉陆禄脪脳..." << endl;
+	g_pTradeUserApi = CThostFtdcTraderApi::CreateFtdcTraderApi(); // 麓麓陆篓陆禄脪脳脢碌脌媒
 	//CThostFtdcTraderSpi *pTradeSpi = new CustomTradeSpi;
-	CustomTradeSpi *pTradeSpi = new CustomTradeSpi;               // 创建交易回调实例
-	g_pTradeUserApi->RegisterSpi(pTradeSpi);                      // 注册事件类
-	g_pTradeUserApi->SubscribePublicTopic(THOST_TERT_RESTART);    // 订阅公共流
-	g_pTradeUserApi->SubscribePrivateTopic(THOST_TERT_RESTART);   // 订阅私有流
-	g_pTradeUserApi->RegisterFront(gTradeFrontAddr);              // 设置交易前置地址
-	g_pTradeUserApi->Init();                                      // 连接运行
+	CustomTradeSpi *pTradeSpi = new CustomTradeSpi;               // 麓麓陆篓陆禄脪脳禄脴碌梅脢碌脌媒
+	g_pTradeUserApi->RegisterSpi(pTradeSpi);                      // 脳垄虏谩脢脗录镁脌脿
+	g_pTradeUserApi->SubscribePublicTopic(THOST_TERT_RESTART);    // 露漏脭脛鹿芦鹿虏脕梅
+	g_pTradeUserApi->SubscribePrivateTopic(THOST_TERT_RESTART);   // 露漏脭脛脣陆脫脨脕梅
+	g_pTradeUserApi->RegisterFront(gTradeFrontAddr);              // 脡猫脰脙陆禄脪脳脟掳脰脙碌脴脰路
+	g_pTradeUserApi->Init();                                      // 脕卢陆脫脭脣脨脨
 		
 
-	// 等到线程退出
+	// 碌脠碌陆脧脽鲁脤脥脣鲁枚
 	g_pMdUserApi->Join();
 	delete pMdUserSpi;
 	g_pMdUserApi->Release();
@@ -71,7 +70,7 @@ int main()
 	delete pTradeSpi;
 	g_pTradeUserApi->Release();
 
-	// 转换本地k线数据
+	// 脳陋禄禄卤戮碌脴k脧脽脢媒戮脻
 	//TickToKlineHelper tickToKlineHelper;
 	//tickToKlineHelper.KLineFromLocalData("market_data.csv", "K_line_data.csv");
 	
