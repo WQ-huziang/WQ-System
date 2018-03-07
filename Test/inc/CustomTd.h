@@ -4,7 +4,14 @@
 
 class CustomTradeSpi : public CThostFtdcTraderSpi
 {
-// ---- ctp_api部分回调接口 ---- //
+private:
+	CThostFtdcTraderApi *pTradeUserApi;       // Td api
+
+	TThostFtdcBrokerIDType sBrokerID;         // broker ID
+	TThostFtdcInvestorIDType sInvesterID;     // user ID
+	TThostFtdcPasswordType sInvesterPassword; // user password
+
+/* ----- ctp_api部分回调接口 ----- */
 public:
 	///当客户端与交易后台建立起通信连接时（还未登录前），该方法被调用。
 	void OnFrontConnected();
