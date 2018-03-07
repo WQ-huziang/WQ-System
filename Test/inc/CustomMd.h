@@ -17,6 +17,7 @@ class CustomMd: public CThostFtdcMdSpi
 {
 private:
 	CThostFtdcMdApi *pMdUserApi;              // MdApi's pointer
+  int nRequestID;                           // request ID
 
 	TThostFtdcBrokerIDType sBrokerID;         // broker ID
 	TThostFtdcInvestorIDType sInvesterID;     // user ID

@@ -12,15 +12,15 @@ using std::endl;
 using std::cerr;
 
 // global value from main.cpp
-extern char dataDicPath[100];                    // data's dictionary path
-extern TThostFtdcBrokerIDType gBrokerID;         // 模拟经纪商代码
-extern TThostFtdcInvestorIDType gInvesterID;     // 投资者账户名
-extern TThostFtdcPasswordType gInvesterPassword; // 投资者密码
+// extern char dataDicPath[100];                    // data's dictionary path
+// extern TThostFtdcBrokerIDType gBrokerID;         // 模拟经纪商代码
+// extern TThostFtdcInvestorIDType gInvesterID;     // 投资者账户名
+// extern TThostFtdcPasswordType gInvesterPassword; // 投资者密码
 
-extern CThostFtdcMdApi *gp_MdUserApi;            // 行情指针
-extern char gMdFrontAddr[50];                    // 模拟行情前置地址
-extern char *gp_InstrumentID[];                  // 行情合约代码列表，中、上、大、郑交易所各选一种
-extern int instrumentNum;                        // 行情合约订阅数量
+// extern CThostFtdcMdApi *gp_MdUserApi;            // 行情指针
+// extern char gMdFrontAddr[50];                    // 模拟行情前置地址
+// extern char *gp_InstrumentID[];                  // 行情合约代码列表，中、上、大、郑交易所各选一种
+// extern int instrumentNum;                        // 行情合约订阅数量
 
 // extern std::unordered_map<std::string, TickToKlineHelper> g_KlineHash; // k线存储表
 
@@ -37,6 +37,7 @@ CustomMd::CustomMd(
 	strcpy(this->sInvesterPassword, gInvesterPassword);
 	vSubInstrumentID = vector<char*>();
 	vQuoteInstrumentID = vector<char*>();
+  nRequestID = 0;
 
 	pMdUserApi = CThostFtdcMdApi::CreateFtdcMdApi(dataDicPath);
 	pMdUserApi->RegisterSpi(this);
@@ -59,12 +60,21 @@ CustomMd::~CustomMd() {
 	pMdUserApi->Release();
 }
 
+// login user
 void userLogin() {
-
+  CThostFtdcReqUserLoginField *loginUserInfo = new CThostFtdcReqUserLoginField();
+  strcpy(loginUserInfo->BrokerID, this->sBrokerID);
+  strcpy(loginUserInfo->UserID, this->sInvesterID);
+  strcpy(loginUserInfo->Password, this->sInvesterPassword);
+  pMdUserApi->ReqUserLogin(loginUserInfo, nRequestID);
 }
 
+// logout user
 void userLogout() {
-	
+  CThostFtdcUserLogoutField *logoutUserInfo = new CThostFtdcUserLogoutField();
+  strcpy(logoutUserInfo->BrokerID, this->sBrokerID);
+  strcpy(logoutUserInfo->UserID, this->sInvesterID);
+	pMdUserApi->ReqUserLogout(logoutUserInfo, nRequestID);
 }
 
 void subscribeInstrument() {
