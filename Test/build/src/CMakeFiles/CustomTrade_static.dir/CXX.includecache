@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../inc/CustomMd.h
-ThostFtdcMdApi.h
-../inc/ThostFtdcMdApi.h
-CustomUser.h
-../inc/CustomUser.h
-CustomSemaphore.h
-../inc/CustomSemaphore.h
-
 ../inc/CustomSemaphore.h
 
 ../inc/CustomTrade.h
@@ -32,10 +24,6 @@ cstdio
 ThostFtdcUserApiDataType.h
 ../inc/ThostFtdcUserApiDataType.h
 
-../inc/ThostFtdcMdApi.h
-ThostFtdcUserApiStruct.h
-../inc/ThostFtdcUserApiStruct.h
-
 ../inc/ThostFtdcTraderApi.h
 ThostFtdcUserApiStruct.h
 ../inc/ThostFtdcUserApiStruct.h
@@ -46,21 +34,17 @@ ThostFtdcUserApiStruct.h
 ThostFtdcUserApiDataType.h
 ../inc/ThostFtdcUserApiDataType.h
 
-/home/huziang/Desktop/api/Test/src/main.cpp
+/home/huziang/Desktop/api/Test/src/CustomTrade.cpp
 iostream
 -
-stdio.h
+time.h
 -
-string
+thread
 -
-unordered_map
+chrono
 -
-ThostFtdcUserApiStruct.h
-/home/huziang/Desktop/api/Test/src/ThostFtdcUserApiStruct.h
-ThostFtdcUserApiDataType.h
-/home/huziang/Desktop/api/Test/src/ThostFtdcUserApiDataType.h
-CustomMd.h
-/home/huziang/Desktop/api/Test/src/CustomMd.h
+cstring
+-
 CustomTrade.h
 /home/huziang/Desktop/api/Test/src/CustomTrade.h
 

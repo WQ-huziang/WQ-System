@@ -34,12 +34,6 @@ ThostFtdcUserApiStruct.h
 ThostFtdcUserApiDataType.h
 ../inc/ThostFtdcUserApiDataType.h
 
-../inc/TickToKlineHelper.h
-vector
--
-string
--
-
 /home/huziang/Desktop/api/Test/src/CustomMd.cpp
 iostream
 -
@@ -55,6 +49,4 @@ unistd.h
 -
 CustomMd.h
 /home/huziang/Desktop/api/Test/src/CustomMd.h
-TickToKlineHelper.h
-/home/huziang/Desktop/api/Test/src/TickToKlineHelper.h
 

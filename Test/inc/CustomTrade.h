@@ -7,6 +7,10 @@
 class CustomTrade : public CThostFtdcTraderSpi, public CustomUser, public Semaphore
 {
 private:
+	TThostFtdcFrontIDType tradeFrontID;	      // front ID, return by server
+	TThostFtdcSessionIDType	sessionID;	      // session ID, return by server
+	TThostFtdcOrderRefType orderRef;          // max order reference, return by server
+
 	bool isParallel;                          // parallel or not
 	int nRequestID;                           // request ID
 	bool isLogin;                             // user has login or not
@@ -33,26 +37,36 @@ public:
 		char *dataDirPath) 
 		: CustomUser(gBrokerID, gInvesterID, gInvesterPassword, dataDirPath) {}
 
+	~CustomTrade();
 
-	void reqOrderInsert(
+	void userLogin();
+
+	void userLogout();
+
+	/// insert order
+	/// @param direction the insert ways about order
+	///            THOST_FTDC_D_Buy : buy
+	///            THOST_FTDC_D_Sell : sell
+	void orderInsert(
 		TThostFtdcInstrumentIDType instrumentID,
 		TThostFtdcPriceType price,
 		TThostFtdcVolumeType volume,
-		TThostFtdcDirectionType direction); // 个性化报单录入，外部调用
-	void reqUserLogin(); // 登录请求
-	void reqUserLogout(); // 登出请求
-	void reqSettlementInfoConfirm(); // 投资者结果确认
-	void reqQueryInstrument(); // 请求查询合约
-	void reqQueryTradingAccount(); // 请求查询资金帐户
-	void reqQueryInvestorPosition(); // 请求查询投资者持仓
-	void reqOrderInsert(); // 请求报单录入
+		TThostFtdcDirectionType direction);
+
+	/// withdraw order
+	void orderWithdraw(TThostFtdcInstrumentIDType instrumentID);
 	
-	void reqOrderAction(CThostFtdcOrderField *pOrder); // 请求报单操作
-	bool isErrorRspInfo(CThostFtdcRspInfoField *pRspInfo); // 是否收到错误信息
-	bool isMyOrder(CThostFtdcOrderField *pOrder); // 是否我的报单回报
-	bool isTradingOrder(CThostFtdcOrderField *pOrder); // 是否正在交易的报单
+	/// judge whether the order is my own order or not 
+	bool isMyOrder(CThostFtdcOrderField *pOrder);
+
+	/// judge whether the order is trading order or not 
+	bool isTradingOrder(CThostFtdcOrderField *pOrder);
 
 /* ----- Overlap the TdSpi ----- */
+private:
+	/// deal with error response info
+	bool isErrorRspInfo(CThostFtdcRspInfoField *pRspInfo);
+
 public:
 	///当客户端与交易后台建立起通信连接时（还未登录前），该方法被调用。
 	void OnFrontConnected();
@@ -73,16 +87,16 @@ public:
 	void OnRspUserLogout(CThostFtdcUserLogoutField *pUserLogout, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
 	///投资者结算结果确认响应
-	void OnRspSettlementInfoConfirm(CThostFtdcSettlementInfoConfirmField *pSettlementInfoConfirm, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+	//void OnRspSettlementInfoConfirm(CThostFtdcSettlementInfoConfirmField *pSettlementInfoConfirm, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
 	///请求查询合约响应
-	void OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+	//void OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
 	///请求查询资金账户响应
-	void OnRspQryTradingAccount(CThostFtdcTradingAccountField *pTradingAccount, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+	//void OnRspQryTradingAccount(CThostFtdcTradingAccountField *pTradingAccount, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
 	///请求查询投资者持仓响应
-	void OnRspQryInvestorPosition(CThostFtdcInvestorPositionField *pInvestorPosition, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+	//void OnRspQryInvestorPosition(CThostFtdcInvestorPositionField *pInvestorPosition, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
 	///报单录入请求响应
 	void OnRspOrderInsert(CThostFtdcInputOrderField *pInputOrder, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);

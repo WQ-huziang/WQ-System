@@ -1,7 +1,9 @@
 /home/huziang/Desktop/api/Test/build/CMakeFiles/edit_cache.dir
 /home/huziang/Desktop/api/Test/build/CMakeFiles/rebuild_cache.dir
 /home/huziang/Desktop/api/Test/build/src/CMakeFiles/edit_cache.dir
-/home/huziang/Desktop/api/Test/build/src/CMakeFiles/CustomMd_static.dir
-/home/huziang/Desktop/api/Test/build/src/CMakeFiles/CustomMd.dir
-/home/huziang/Desktop/api/Test/build/src/CMakeFiles/main.dir
 /home/huziang/Desktop/api/Test/build/src/CMakeFiles/rebuild_cache.dir
+/home/huziang/Desktop/api/Test/build/src/CMakeFiles/CustomMd_static.dir
+/home/huziang/Desktop/api/Test/build/src/CMakeFiles/CustomTrade.dir
+/home/huziang/Desktop/api/Test/build/src/CMakeFiles/main.dir
+/home/huziang/Desktop/api/Test/build/src/CMakeFiles/CustomMd.dir
+/home/huziang/Desktop/api/Test/build/src/CMakeFiles/CustomTrade_static.dir

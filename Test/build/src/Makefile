@@ -126,19 +126,19 @@ CustomMd_static/fast:
 .PHONY : CustomMd_static/fast
 
 # Convenience name for target.
-src/CMakeFiles/CustomMd.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomMd.dir/rule
-.PHONY : src/CMakeFiles/CustomMd.dir/rule
+src/CMakeFiles/CustomTrade.dir/rule:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomTrade.dir/rule
+.PHONY : src/CMakeFiles/CustomTrade.dir/rule
 
 # Convenience name for target.
-CustomMd: src/CMakeFiles/CustomMd.dir/rule
+CustomTrade: src/CMakeFiles/CustomTrade.dir/rule
 
-.PHONY : CustomMd
+.PHONY : CustomTrade
 
 # fast build rule for target.
-CustomMd/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/build
-.PHONY : CustomMd/fast
+CustomTrade/fast:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/build
+.PHONY : CustomTrade/fast
 
 # Convenience name for target.
 src/CMakeFiles/main.dir/rule:
@@ -154,6 +154,36 @@ main: src/CMakeFiles/main.dir/rule
 main/fast:
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
 .PHONY : main/fast
+
+# Convenience name for target.
+src/CMakeFiles/CustomMd.dir/rule:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomMd.dir/rule
+.PHONY : src/CMakeFiles/CustomMd.dir/rule
+
+# Convenience name for target.
+CustomMd: src/CMakeFiles/CustomMd.dir/rule
+
+.PHONY : CustomMd
+
+# fast build rule for target.
+CustomMd/fast:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/build
+.PHONY : CustomMd/fast
+
+# Convenience name for target.
+src/CMakeFiles/CustomTrade_static.dir/rule:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomTrade_static.dir/rule
+.PHONY : src/CMakeFiles/CustomTrade_static.dir/rule
+
+# Convenience name for target.
+CustomTrade_static: src/CMakeFiles/CustomTrade_static.dir/rule
+
+.PHONY : CustomTrade_static
+
+# fast build rule for target.
+CustomTrade_static/fast:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/build
+.PHONY : CustomTrade_static/fast
 
 CustomMd.o: CustomMd.cpp.o
 
@@ -184,6 +214,36 @@ CustomMd.cpp.s:
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd_static.dir/build.make src/CMakeFiles/CustomMd_static.dir/CustomMd.cpp.s
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/CustomMd.cpp.s
 .PHONY : CustomMd.cpp.s
+
+CustomTrade.o: CustomTrade.cpp.o
+
+.PHONY : CustomTrade.o
+
+# target to build an object file
+CustomTrade.cpp.o:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/CustomTrade.cpp.o
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/CustomTrade.cpp.o
+.PHONY : CustomTrade.cpp.o
+
+CustomTrade.i: CustomTrade.cpp.i
+
+.PHONY : CustomTrade.i
+
+# target to preprocess a source file
+CustomTrade.cpp.i:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/CustomTrade.cpp.i
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/CustomTrade.cpp.i
+.PHONY : CustomTrade.cpp.i
+
+CustomTrade.s: CustomTrade.cpp.s
+
+.PHONY : CustomTrade.s
+
+# target to generate assembly for a file
+CustomTrade.cpp.s:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/CustomTrade.cpp.s
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/CustomTrade.cpp.s
+.PHONY : CustomTrade.cpp.s
 
 main.o: main.cpp.o
 
@@ -219,13 +279,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... CustomMd_static"
-	@echo "... CustomMd"
-	@echo "... main"
 	@echo "... rebuild_cache"
+	@echo "... CustomMd_static"
+	@echo "... CustomTrade"
+	@echo "... main"
+	@echo "... CustomMd"
+	@echo "... CustomTrade_static"
 	@echo "... CustomMd.o"
 	@echo "... CustomMd.i"
 	@echo "... CustomMd.s"
+	@echo "... CustomTrade.o"
+	@echo "... CustomTrade.i"
+	@echo "... CustomTrade.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

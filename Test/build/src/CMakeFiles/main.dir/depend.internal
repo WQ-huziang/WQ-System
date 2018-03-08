@@ -4,8 +4,10 @@
 src/CMakeFiles/main.dir/main.cpp.o
  ../inc/CustomMd.h
  ../inc/CustomSemaphore.h
+ ../inc/CustomTrade.h
  ../inc/CustomUser.h
  ../inc/ThostFtdcMdApi.h
+ ../inc/ThostFtdcTraderApi.h
  ../inc/ThostFtdcUserApiDataType.h
  ../inc/ThostFtdcUserApiStruct.h
  /home/huziang/Desktop/api/Test/src/main.cpp

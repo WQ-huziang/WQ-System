@@ -1,1 +1,1 @@
-/usr/bin/c++   -std=c++11 -g   CMakeFiles/main.dir/main.cpp.o  -o ../../bin/main  -L/home/huziang/Desktop/api/Test/lib ../../lib/libCustomMd.so.1.2 -lthostmduserapi -lthosttraderapi -Wl,-rpath,/home/huziang/Desktop/api/Test/lib 
+/usr/bin/c++   -std=c++11 -g   CMakeFiles/main.dir/main.cpp.o  -o ../../bin/main  -L/home/huziang/Desktop/api/Test/lib ../../lib/libCustomMd.so.1.2 ../../lib/libCustomTrade.so.1.2 -lthostmduserapi -lthosttraderapi -Wl,-rpath,/home/huziang/Desktop/api/Test/lib 

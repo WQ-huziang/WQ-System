@@ -190,6 +190,12 @@ CustomTradeSpi_LIB_DEPENDS:STATIC=
 CustomTradeSpi_static_LIB_DEPENDS:STATIC=
 
 //Dependencies for target
+CustomTrade_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+CustomTrade_static_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
 StrategyTrade_LIB_DEPENDS:STATIC=
 
 //Dependencies for target

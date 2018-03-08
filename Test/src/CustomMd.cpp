@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "CustomMd.h"
-#include "TickToKlineHelper.h"
 
 using std::endl;
 using std::cerr;
@@ -21,7 +20,6 @@ CustomMd* CustomMd::CreateCustomMd(
 	char gMdFrontAddr[])
 {
 	CustomMd *newCustomMd = new CustomMd(gBrokerID, gInvesterID, gInvesterPassword, dataDirPath);
-
 	newCustomMd->isParallel = isParallel;
     newCustomMd->nRequestID = 0;
 
@@ -35,29 +33,30 @@ CustomMd* CustomMd::CreateCustomMd(
 
 // instructure
 CustomMd::~CustomMd() {
-	// clear vector
-	// for (char *str : vSubInstrumentID) {
-	// 	delete[] str;
-	// }
-	// for (char *str : vQuoteInstrumentID) {
-	// 	delete[] str;
-	// }
-	// vSubInstrumentID.clear();
-	// vQuoteInstrumentID.clear();
-	
-	delete[] dataDirPath;
-
 	pMdUserApi->Join();
 	pMdUserApi->Release();
 }
 
 // login user
 void CustomMd::userLogin() {
-  CThostFtdcReqUserLoginField *loginUserInfo = new CThostFtdcReqUserLoginField();
-  strcpy(loginUserInfo->BrokerID, this->sBrokerID);
-  strcpy(loginUserInfo->UserID, this->sInvesterID);
-  strcpy(loginUserInfo->Password, this->sInvesterPassword);
-  pMdUserApi->ReqUserLogin(loginUserInfo, nRequestID);
+	if (!isParallel) {
+		wait();
+	}
+
+	// Login
+	CThostFtdcReqUserLoginField loginReq;
+	memset(&loginReq, 0, sizeof(loginReq));
+	strcpy(loginReq.BrokerID, sBrokerID);
+	strcpy(loginReq.UserID, sInvesterID);
+	strcpy(loginReq.Password, sInvesterPassword);
+
+	int rt = pMdUserApi->ReqUserLogin(&loginReq, nRequestID);
+	if (!rt) {
+		fprintf(fout, ">>>>> Send user request success\n");
+	}
+	else {
+		fprintf(ferr, "!!!!! Send user request failed\n");
+	}
 }
 
 // logout user
@@ -105,20 +104,7 @@ inline void showErrorMessage(CThostFtdcRspInfoField *pRspInfo)
 // 连接成功应答
 void CustomMd::OnFrontConnected()
 {
-	cout << "===== Connection Success =====" << endl;
-
-	// 开始登录
-	CThostFtdcReqUserLoginField loginReq;
-	memset(&loginReq, 0, sizeof(loginReq));
-	strcpy(loginReq.BrokerID, sBrokerID);
-	strcpy(loginReq.UserID, sInvesterID);
-	strcpy(loginReq.Password, sInvesterPassword);
-
-	int rt = pMdUserApi->ReqUserLogin(&loginReq, nRequestID);
-	if (!rt)
-		cout << ">>>>> Send user request success" << endl;
-	else
-		cerr << "!!!!! Send user request failed" << endl;
+	fprintf(fout, "===== Connection Success =====\n");
 	signal();
 }
 
@@ -133,7 +119,7 @@ void CustomMd::OnFrontDisconnected(int nReason)
 void CustomMd::OnHeartBeatWarning(int nTimeLapse)
 {
 	cerr << "===== Heart Beat Warning =====" << endl;
-	cerr << "The interval connect time： " << nTimeLapse << endl;
+	cerr << "The interval connect time: " << nTimeLapse << endl;
 }
 
 // 登录应答
@@ -173,8 +159,7 @@ void CustomMd::OnRspUserLogout(
 		cout << "===== User Information as Follow =====" << endl;
 		cout << "Broker ID: " << pUserLogout->BrokerID << endl;
 		cout << "User ID: " << pUserLogout->UserID << endl;
-	}
-	else {
+	} else {
 		cerr << "===== Login Failed =====" << endl;
 		showErrorMessage(pRspInfo);
 	}

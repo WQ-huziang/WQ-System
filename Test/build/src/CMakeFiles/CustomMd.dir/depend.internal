@@ -8,5 +8,4 @@ src/CMakeFiles/CustomMd.dir/CustomMd.cpp.o
  ../inc/ThostFtdcMdApi.h
  ../inc/ThostFtdcUserApiDataType.h
  ../inc/ThostFtdcUserApiStruct.h
- ../inc/TickToKlineHelper.h
  /home/huziang/Desktop/api/Test/src/CustomMd.cpp

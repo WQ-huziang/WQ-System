@@ -7,6 +7,5 @@ src/CMakeFiles/CustomMd_static.dir/CustomMd.cpp.o: ../inc/CustomUser.h
 src/CMakeFiles/CustomMd_static.dir/CustomMd.cpp.o: ../inc/ThostFtdcMdApi.h
 src/CMakeFiles/CustomMd_static.dir/CustomMd.cpp.o: ../inc/ThostFtdcUserApiDataType.h
 src/CMakeFiles/CustomMd_static.dir/CustomMd.cpp.o: ../inc/ThostFtdcUserApiStruct.h
-src/CMakeFiles/CustomMd_static.dir/CustomMd.cpp.o: ../inc/TickToKlineHelper.h
 src/CMakeFiles/CustomMd_static.dir/CustomMd.cpp.o: ../src/CustomMd.cpp
 

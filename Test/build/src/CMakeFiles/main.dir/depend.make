@@ -3,8 +3,10 @@
 
 src/CMakeFiles/main.dir/main.cpp.o: ../inc/CustomMd.h
 src/CMakeFiles/main.dir/main.cpp.o: ../inc/CustomSemaphore.h
+src/CMakeFiles/main.dir/main.cpp.o: ../inc/CustomTrade.h
 src/CMakeFiles/main.dir/main.cpp.o: ../inc/CustomUser.h
 src/CMakeFiles/main.dir/main.cpp.o: ../inc/ThostFtdcMdApi.h
+src/CMakeFiles/main.dir/main.cpp.o: ../inc/ThostFtdcTraderApi.h
 src/CMakeFiles/main.dir/main.cpp.o: ../inc/ThostFtdcUserApiDataType.h
 src/CMakeFiles/main.dir/main.cpp.o: ../inc/ThostFtdcUserApiStruct.h
 src/CMakeFiles/main.dir/main.cpp.o: ../src/main.cpp

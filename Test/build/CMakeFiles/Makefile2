@@ -64,15 +64,19 @@ CMAKE_BINARY_DIR = /home/huziang/Desktop/api/Test/build
 
 # Convenience name for "all" pass in the directory.
 src/all: src/CMakeFiles/CustomMd_static.dir/all
-src/all: src/CMakeFiles/CustomMd.dir/all
+src/all: src/CMakeFiles/CustomTrade.dir/all
 src/all: src/CMakeFiles/main.dir/all
+src/all: src/CMakeFiles/CustomMd.dir/all
+src/all: src/CMakeFiles/CustomTrade_static.dir/all
 
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
 src/clean: src/CMakeFiles/CustomMd_static.dir/clean
-src/clean: src/CMakeFiles/CustomMd.dir/clean
+src/clean: src/CMakeFiles/CustomTrade.dir/clean
 src/clean: src/CMakeFiles/main.dir/clean
+src/clean: src/CMakeFiles/CustomMd.dir/clean
+src/clean: src/CMakeFiles/CustomTrade_static.dir/clean
 
 .PHONY : src/clean
 
@@ -119,6 +123,81 @@ clean: src/CMakeFiles/CustomMd_static.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target src/CMakeFiles/CustomTrade.dir
+
+# All Build rule for target.
+src/CMakeFiles/CustomTrade.dir/all:
+	$(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/depend
+	$(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=5,6 "Built target CustomTrade"
+.PHONY : src/CMakeFiles/CustomTrade.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/CustomTrade.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/CustomTrade.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomTrade.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/CustomTrade.dir/rule
+
+# Convenience name for target.
+CustomTrade: src/CMakeFiles/CustomTrade.dir/rule
+
+.PHONY : CustomTrade
+
+# clean rule for target.
+src/CMakeFiles/CustomTrade.dir/clean:
+	$(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/clean
+.PHONY : src/CMakeFiles/CustomTrade.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/CustomTrade.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/main.dir
+
+# All Build rule for target.
+src/CMakeFiles/main.dir/all: src/CMakeFiles/CustomTrade.dir/all
+src/CMakeFiles/main.dir/all: src/CMakeFiles/CustomMd.dir/all
+	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
+	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=9,10 "Built target main"
+.PHONY : src/CMakeFiles/main.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/main.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: src/CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# clean rule for target.
+src/CMakeFiles/main.dir/clean:
+	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/clean
+.PHONY : src/CMakeFiles/main.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/main.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/CustomMd.dir
 
 # All Build rule for target.
@@ -156,39 +235,39 @@ clean: src/CMakeFiles/CustomMd.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/main.dir
+# Target rules for target src/CMakeFiles/CustomTrade_static.dir
 
 # All Build rule for target.
-src/CMakeFiles/main.dir/all: src/CMakeFiles/CustomMd.dir/all
-	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
-	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=5,6 "Built target main"
-.PHONY : src/CMakeFiles/main.dir/all
+src/CMakeFiles/CustomTrade_static.dir/all:
+	$(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/depend
+	$(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=7,8 "Built target CustomTrade_static"
+.PHONY : src/CMakeFiles/CustomTrade_static.dir/all
 
 # Include target in all.
-all: src/CMakeFiles/main.dir/all
+all: src/CMakeFiles/CustomTrade_static.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-src/CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 4
-	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/all
+src/CMakeFiles/CustomTrade_static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomTrade_static.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/main.dir/rule
+.PHONY : src/CMakeFiles/CustomTrade_static.dir/rule
 
 # Convenience name for target.
-main: src/CMakeFiles/main.dir/rule
+CustomTrade_static: src/CMakeFiles/CustomTrade_static.dir/rule
 
-.PHONY : main
-
-# clean rule for target.
-src/CMakeFiles/main.dir/clean:
-	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/clean
-.PHONY : src/CMakeFiles/main.dir/clean
+.PHONY : CustomTrade_static
 
 # clean rule for target.
-clean: src/CMakeFiles/main.dir/clean
+src/CMakeFiles/CustomTrade_static.dir/clean:
+	$(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/clean
+.PHONY : src/CMakeFiles/CustomTrade_static.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/CustomTrade_static.dir/clean
 
 .PHONY : clean
 

@@ -124,17 +124,17 @@ CustomMd_static/fast:
 .PHONY : CustomMd_static/fast
 
 #=============================================================================
-# Target rules for targets named CustomMd
+# Target rules for targets named CustomTrade
 
 # Build rule for target.
-CustomMd: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CustomMd
-.PHONY : CustomMd
+CustomTrade: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CustomTrade
+.PHONY : CustomTrade
 
 # fast build rule for target.
-CustomMd/fast:
-	$(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/build
-.PHONY : CustomMd/fast
+CustomTrade/fast:
+	$(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/build
+.PHONY : CustomTrade/fast
 
 #=============================================================================
 # Target rules for targets named main
@@ -149,6 +149,32 @@ main/fast:
 	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+#=============================================================================
+# Target rules for targets named CustomMd
+
+# Build rule for target.
+CustomMd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CustomMd
+.PHONY : CustomMd
+
+# fast build rule for target.
+CustomMd/fast:
+	$(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/build
+.PHONY : CustomMd/fast
+
+#=============================================================================
+# Target rules for targets named CustomTrade_static
+
+# Build rule for target.
+CustomTrade_static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CustomTrade_static
+.PHONY : CustomTrade_static
+
+# fast build rule for target.
+CustomTrade_static/fast:
+	$(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/build
+.PHONY : CustomTrade_static/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -158,8 +184,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CustomMd_static"
-	@echo "... CustomMd"
+	@echo "... CustomTrade"
 	@echo "... main"
+	@echo "... CustomMd"
+	@echo "... CustomTrade_static"
 .PHONY : help
 
 

@@ -1,4 +1,4 @@
-SET(CLASS_FILE CustomMd)
+SET(CLASS_FILE CustomMd CustomTrade)
 SET(MAIN_FILE main)
 SET(CTP_SO thostmduserapi thosttraderapi)
 
