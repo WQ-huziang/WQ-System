@@ -111,34 +111,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/CMakeFiles/TickToKlineHelper_static.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/TickToKlineHelper_static.dir/rule
-.PHONY : src/CMakeFiles/TickToKlineHelper_static.dir/rule
+src/CMakeFiles/CustomMd_static.dir/rule:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomMd_static.dir/rule
+.PHONY : src/CMakeFiles/CustomMd_static.dir/rule
 
 # Convenience name for target.
-TickToKlineHelper_static: src/CMakeFiles/TickToKlineHelper_static.dir/rule
+CustomMd_static: src/CMakeFiles/CustomMd_static.dir/rule
 
-.PHONY : TickToKlineHelper_static
+.PHONY : CustomMd_static
 
 # fast build rule for target.
-TickToKlineHelper_static/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/TickToKlineHelper_static.dir/build.make src/CMakeFiles/TickToKlineHelper_static.dir/build
-.PHONY : TickToKlineHelper_static/fast
+CustomMd_static/fast:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd_static.dir/build.make src/CMakeFiles/CustomMd_static.dir/build
+.PHONY : CustomMd_static/fast
 
 # Convenience name for target.
-src/CMakeFiles/CustomMdSpi_static.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomMdSpi_static.dir/rule
-.PHONY : src/CMakeFiles/CustomMdSpi_static.dir/rule
+src/CMakeFiles/CustomMd.dir/rule:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomMd.dir/rule
+.PHONY : src/CMakeFiles/CustomMd.dir/rule
 
 # Convenience name for target.
-CustomMdSpi_static: src/CMakeFiles/CustomMdSpi_static.dir/rule
+CustomMd: src/CMakeFiles/CustomMd.dir/rule
 
-.PHONY : CustomMdSpi_static
+.PHONY : CustomMd
 
 # fast build rule for target.
-CustomMdSpi_static/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMdSpi_static.dir/build.make src/CMakeFiles/CustomMdSpi_static.dir/build
-.PHONY : CustomMdSpi_static/fast
+CustomMd/fast:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/build
+.PHONY : CustomMd/fast
 
 # Convenience name for target.
 src/CMakeFiles/main.dir/rule:
@@ -155,215 +155,35 @@ main/fast:
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-# Convenience name for target.
-src/CMakeFiles/CustomTradeSpi_static.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomTradeSpi_static.dir/rule
-.PHONY : src/CMakeFiles/CustomTradeSpi_static.dir/rule
+CustomMd.o: CustomMd.cpp.o
 
-# Convenience name for target.
-CustomTradeSpi_static: src/CMakeFiles/CustomTradeSpi_static.dir/rule
-
-.PHONY : CustomTradeSpi_static
-
-# fast build rule for target.
-CustomTradeSpi_static/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTradeSpi_static.dir/build.make src/CMakeFiles/CustomTradeSpi_static.dir/build
-.PHONY : CustomTradeSpi_static/fast
-
-# Convenience name for target.
-src/CMakeFiles/CustomMdSpi.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomMdSpi.dir/rule
-.PHONY : src/CMakeFiles/CustomMdSpi.dir/rule
-
-# Convenience name for target.
-CustomMdSpi: src/CMakeFiles/CustomMdSpi.dir/rule
-
-.PHONY : CustomMdSpi
-
-# fast build rule for target.
-CustomMdSpi/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMdSpi.dir/build.make src/CMakeFiles/CustomMdSpi.dir/build
-.PHONY : CustomMdSpi/fast
-
-# Convenience name for target.
-src/CMakeFiles/StrategyTrade.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/StrategyTrade.dir/rule
-.PHONY : src/CMakeFiles/StrategyTrade.dir/rule
-
-# Convenience name for target.
-StrategyTrade: src/CMakeFiles/StrategyTrade.dir/rule
-
-.PHONY : StrategyTrade
-
-# fast build rule for target.
-StrategyTrade/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/StrategyTrade.dir/build.make src/CMakeFiles/StrategyTrade.dir/build
-.PHONY : StrategyTrade/fast
-
-# Convenience name for target.
-src/CMakeFiles/StrategyTrade_static.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/StrategyTrade_static.dir/rule
-.PHONY : src/CMakeFiles/StrategyTrade_static.dir/rule
-
-# Convenience name for target.
-StrategyTrade_static: src/CMakeFiles/StrategyTrade_static.dir/rule
-
-.PHONY : StrategyTrade_static
-
-# fast build rule for target.
-StrategyTrade_static/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/StrategyTrade_static.dir/build.make src/CMakeFiles/StrategyTrade_static.dir/build
-.PHONY : StrategyTrade_static/fast
-
-# Convenience name for target.
-src/CMakeFiles/CustomTradeSpi.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomTradeSpi.dir/rule
-.PHONY : src/CMakeFiles/CustomTradeSpi.dir/rule
-
-# Convenience name for target.
-CustomTradeSpi: src/CMakeFiles/CustomTradeSpi.dir/rule
-
-.PHONY : CustomTradeSpi
-
-# fast build rule for target.
-CustomTradeSpi/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTradeSpi.dir/build.make src/CMakeFiles/CustomTradeSpi.dir/build
-.PHONY : CustomTradeSpi/fast
-
-# Convenience name for target.
-src/CMakeFiles/TickToKlineHelper.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/TickToKlineHelper.dir/rule
-.PHONY : src/CMakeFiles/TickToKlineHelper.dir/rule
-
-# Convenience name for target.
-TickToKlineHelper: src/CMakeFiles/TickToKlineHelper.dir/rule
-
-.PHONY : TickToKlineHelper
-
-# fast build rule for target.
-TickToKlineHelper/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/TickToKlineHelper.dir/build.make src/CMakeFiles/TickToKlineHelper.dir/build
-.PHONY : TickToKlineHelper/fast
-
-CustomMdSpi.o: CustomMdSpi.cpp.o
-
-.PHONY : CustomMdSpi.o
+.PHONY : CustomMd.o
 
 # target to build an object file
-CustomMdSpi.cpp.o:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMdSpi_static.dir/build.make src/CMakeFiles/CustomMdSpi_static.dir/CustomMdSpi.cpp.o
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMdSpi.dir/build.make src/CMakeFiles/CustomMdSpi.dir/CustomMdSpi.cpp.o
-.PHONY : CustomMdSpi.cpp.o
+CustomMd.cpp.o:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd_static.dir/build.make src/CMakeFiles/CustomMd_static.dir/CustomMd.cpp.o
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/CustomMd.cpp.o
+.PHONY : CustomMd.cpp.o
 
-CustomMdSpi.i: CustomMdSpi.cpp.i
+CustomMd.i: CustomMd.cpp.i
 
-.PHONY : CustomMdSpi.i
-
-# target to preprocess a source file
-CustomMdSpi.cpp.i:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMdSpi_static.dir/build.make src/CMakeFiles/CustomMdSpi_static.dir/CustomMdSpi.cpp.i
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMdSpi.dir/build.make src/CMakeFiles/CustomMdSpi.dir/CustomMdSpi.cpp.i
-.PHONY : CustomMdSpi.cpp.i
-
-CustomMdSpi.s: CustomMdSpi.cpp.s
-
-.PHONY : CustomMdSpi.s
-
-# target to generate assembly for a file
-CustomMdSpi.cpp.s:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMdSpi_static.dir/build.make src/CMakeFiles/CustomMdSpi_static.dir/CustomMdSpi.cpp.s
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMdSpi.dir/build.make src/CMakeFiles/CustomMdSpi.dir/CustomMdSpi.cpp.s
-.PHONY : CustomMdSpi.cpp.s
-
-CustomTradeSpi.o: CustomTradeSpi.cpp.o
-
-.PHONY : CustomTradeSpi.o
-
-# target to build an object file
-CustomTradeSpi.cpp.o:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTradeSpi_static.dir/build.make src/CMakeFiles/CustomTradeSpi_static.dir/CustomTradeSpi.cpp.o
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTradeSpi.dir/build.make src/CMakeFiles/CustomTradeSpi.dir/CustomTradeSpi.cpp.o
-.PHONY : CustomTradeSpi.cpp.o
-
-CustomTradeSpi.i: CustomTradeSpi.cpp.i
-
-.PHONY : CustomTradeSpi.i
+.PHONY : CustomMd.i
 
 # target to preprocess a source file
-CustomTradeSpi.cpp.i:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTradeSpi_static.dir/build.make src/CMakeFiles/CustomTradeSpi_static.dir/CustomTradeSpi.cpp.i
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTradeSpi.dir/build.make src/CMakeFiles/CustomTradeSpi.dir/CustomTradeSpi.cpp.i
-.PHONY : CustomTradeSpi.cpp.i
+CustomMd.cpp.i:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd_static.dir/build.make src/CMakeFiles/CustomMd_static.dir/CustomMd.cpp.i
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/CustomMd.cpp.i
+.PHONY : CustomMd.cpp.i
 
-CustomTradeSpi.s: CustomTradeSpi.cpp.s
+CustomMd.s: CustomMd.cpp.s
 
-.PHONY : CustomTradeSpi.s
-
-# target to generate assembly for a file
-CustomTradeSpi.cpp.s:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTradeSpi_static.dir/build.make src/CMakeFiles/CustomTradeSpi_static.dir/CustomTradeSpi.cpp.s
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTradeSpi.dir/build.make src/CMakeFiles/CustomTradeSpi.dir/CustomTradeSpi.cpp.s
-.PHONY : CustomTradeSpi.cpp.s
-
-StrategyTrade.o: StrategyTrade.cpp.o
-
-.PHONY : StrategyTrade.o
-
-# target to build an object file
-StrategyTrade.cpp.o:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/StrategyTrade.dir/build.make src/CMakeFiles/StrategyTrade.dir/StrategyTrade.cpp.o
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/StrategyTrade_static.dir/build.make src/CMakeFiles/StrategyTrade_static.dir/StrategyTrade.cpp.o
-.PHONY : StrategyTrade.cpp.o
-
-StrategyTrade.i: StrategyTrade.cpp.i
-
-.PHONY : StrategyTrade.i
-
-# target to preprocess a source file
-StrategyTrade.cpp.i:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/StrategyTrade.dir/build.make src/CMakeFiles/StrategyTrade.dir/StrategyTrade.cpp.i
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/StrategyTrade_static.dir/build.make src/CMakeFiles/StrategyTrade_static.dir/StrategyTrade.cpp.i
-.PHONY : StrategyTrade.cpp.i
-
-StrategyTrade.s: StrategyTrade.cpp.s
-
-.PHONY : StrategyTrade.s
+.PHONY : CustomMd.s
 
 # target to generate assembly for a file
-StrategyTrade.cpp.s:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/StrategyTrade.dir/build.make src/CMakeFiles/StrategyTrade.dir/StrategyTrade.cpp.s
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/StrategyTrade_static.dir/build.make src/CMakeFiles/StrategyTrade_static.dir/StrategyTrade.cpp.s
-.PHONY : StrategyTrade.cpp.s
-
-TickToKlineHelper.o: TickToKlineHelper.cpp.o
-
-.PHONY : TickToKlineHelper.o
-
-# target to build an object file
-TickToKlineHelper.cpp.o:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/TickToKlineHelper_static.dir/build.make src/CMakeFiles/TickToKlineHelper_static.dir/TickToKlineHelper.cpp.o
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/TickToKlineHelper.dir/build.make src/CMakeFiles/TickToKlineHelper.dir/TickToKlineHelper.cpp.o
-.PHONY : TickToKlineHelper.cpp.o
-
-TickToKlineHelper.i: TickToKlineHelper.cpp.i
-
-.PHONY : TickToKlineHelper.i
-
-# target to preprocess a source file
-TickToKlineHelper.cpp.i:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/TickToKlineHelper_static.dir/build.make src/CMakeFiles/TickToKlineHelper_static.dir/TickToKlineHelper.cpp.i
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/TickToKlineHelper.dir/build.make src/CMakeFiles/TickToKlineHelper.dir/TickToKlineHelper.cpp.i
-.PHONY : TickToKlineHelper.cpp.i
-
-TickToKlineHelper.s: TickToKlineHelper.cpp.s
-
-.PHONY : TickToKlineHelper.s
-
-# target to generate assembly for a file
-TickToKlineHelper.cpp.s:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/TickToKlineHelper_static.dir/build.make src/CMakeFiles/TickToKlineHelper_static.dir/TickToKlineHelper.cpp.s
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/TickToKlineHelper.dir/build.make src/CMakeFiles/TickToKlineHelper.dir/TickToKlineHelper.cpp.s
-.PHONY : TickToKlineHelper.cpp.s
+CustomMd.cpp.s:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd_static.dir/build.make src/CMakeFiles/CustomMd_static.dir/CustomMd.cpp.s
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/CustomMd.cpp.s
+.PHONY : CustomMd.cpp.s
 
 main.o: main.cpp.o
 
@@ -399,28 +219,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... TickToKlineHelper_static"
-	@echo "... CustomMdSpi_static"
+	@echo "... CustomMd_static"
+	@echo "... CustomMd"
 	@echo "... main"
-	@echo "... CustomTradeSpi_static"
 	@echo "... rebuild_cache"
-	@echo "... CustomMdSpi"
-	@echo "... StrategyTrade"
-	@echo "... StrategyTrade_static"
-	@echo "... CustomTradeSpi"
-	@echo "... TickToKlineHelper"
-	@echo "... CustomMdSpi.o"
-	@echo "... CustomMdSpi.i"
-	@echo "... CustomMdSpi.s"
-	@echo "... CustomTradeSpi.o"
-	@echo "... CustomTradeSpi.i"
-	@echo "... CustomTradeSpi.s"
-	@echo "... StrategyTrade.o"
-	@echo "... StrategyTrade.i"
-	@echo "... StrategyTrade.s"
-	@echo "... TickToKlineHelper.o"
-	@echo "... TickToKlineHelper.i"
-	@echo "... TickToKlineHelper.s"
+	@echo "... CustomMd.o"
+	@echo "... CustomMd.i"
+	@echo "... CustomMd.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

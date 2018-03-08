@@ -1,38 +1,44 @@
 #pragma once
 
 /* ----- Complete Md Class ----- */  
-#include <vector>
-#include <cstring>
 #include "ThostFtdcMdApi.h"
-using namespace std;
+#include "CustomUser.h"
+#include "CustomSemaphore.h"
 
-#define Quote 0
-#define Subscribe 1
+// #define Quote 0
+// #define Subscribe 1
 
 /*
  * this class inhert interface CThostFtdcMdSpi
  * this class package MdApi for main.cpp use
  */
-class CustomMd: public CThostFtdcMdSpi
+class CustomMd: public CThostFtdcMdSpi, public CustomUser, public Semaphore
 {
 private:
+	bool isParallel;                          // parallel or not
+	int nRequestID;                           // request ID
+
 	CThostFtdcMdApi *pMdUserApi;              // MdApi's pointer
-  int nRequestID;                           // request ID
 
-	TThostFtdcBrokerIDType sBrokerID;         // broker ID
-	TThostFtdcInvestorIDType sInvesterID;     // user ID
-	TThostFtdcPasswordType sInvesterPassword; // user password
-
-	vector<char*> vSubInstrumentID;           // the subscribe instrument
-	vector<char*> vQuoteInstrumentID;         // the quoit instrument
+/* ----- custom function ----- */
 public:
-	/// structure function
-	/// gp_InstrumentID = empty
-	CustomMd(TThostFtdcInvestorIDType gInvesterID,
+	/// constructure function
+	/// dataDirPath must be absolute
+	static CustomMd* CreateCustomMd(
+		TThostFtdcInvestorIDType gInvesterID,
 		TThostFtdcPasswordType gInvesterPassword,
+		char dataDirPath[] = "/home/huziang/Desktop/api/Test/data/Md/",
+		bool isParallel = false,
 		TThostFtdcBrokerIDType gBrokerID = "9999", 
-		char gMdFrontAddr[] = "tcp://180.168.146.187:10011",
-		char dataDicPath[] = "data/");
+		char gMdFrontAddr[] = "tcp://180.168.146.187:10011");
+
+	/// constructure function
+	CustomMd(
+		TThostFtdcBrokerIDType gBrokerID,
+		TThostFtdcInvestorIDType gInvesterID,
+		TThostFtdcPasswordType gInvesterPassword,
+		char *dataDirPath) 
+		: CustomUser(gBrokerID, gInvesterID, gInvesterPassword, dataDirPath) {}
 
 	/// instructure function
 	~CustomMd();
@@ -41,16 +47,18 @@ public:
 
 	void userLogout();
 
-	/// 
-	void subscribeInstrument();
+	/// add subcribe instrument
+	void subscribeInstrument(char *ppInstrumentID[], int nCount);
 
-	void unsubscribeInstrument();
+	/// delete subcribe instrument
+	void unsubscribeInstrument(char *ppInstrumentID[], int nCount);
 
 	void quoteInstrument();
 
 	void unQuoteInstrument();
 
-	/* ----- Overlap the MdSpi ----- */
+/* ----- Overlap the MdSpi ----- */
+public:
 	///µ±¿Í»§¶ËÓë½»Ò×ºóÌ¨½¨Á¢ÆðÍ¨ÐÅÁ¬½ÓÊ±£¨»¹Î´µÇÂ¼Ç°£©£¬¸Ã·½·¨±»µ÷ÓÃ¡£
 	void OnFrontConnected();
 

@@ -34,19 +34,27 @@ ThostFtdcUserApiStruct.h
 ThostFtdcUserApiDataType.h
 ../inc/ThostFtdcUserApiDataType.h
 
-/home/huziang/Desktop/api/Test/src/main.cpp
-iostream
--
-stdio.h
+../inc/TickToKlineHelper.h
+vector
 -
 string
 -
+
+/home/huziang/Desktop/api/Test/src/CustomMd.cpp
+iostream
+-
+cstring
+-
 unordered_map
 -
-ThostFtdcUserApiStruct.h
-/home/huziang/Desktop/api/Test/src/ThostFtdcUserApiStruct.h
-ThostFtdcUserApiDataType.h
-/home/huziang/Desktop/api/Test/src/ThostFtdcUserApiDataType.h
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
 CustomMd.h
 /home/huziang/Desktop/api/Test/src/CustomMd.h
+TickToKlineHelper.h
+/home/huziang/Desktop/api/Test/src/TickToKlineHelper.h
 

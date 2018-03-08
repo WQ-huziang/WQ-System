@@ -3,15 +3,10 @@
 #include <thread>
 #include <chrono>
 #include <cstring>
-#include "CustomTradeSpi.h"
+#include "CustomTrade.h"
 #include "StrategyTrade.h"
 
 // ---- 全局参数声明 ---- //
-extern TThostFtdcBrokerIDType gBrokerID;                      // 模拟经纪商代码
-extern TThostFtdcInvestorIDType gInvesterID;                  // 投资者账户名
-extern TThostFtdcPasswordType gInvesterPassword;              // 投资者密码
-extern CThostFtdcTraderApi *g_pTradeUserApi;                  // 交易指针
-extern char gTradeFrontAddr[];                                // 模拟交易前置地址
 extern TThostFtdcInstrumentIDType g_pTradeInstrumentID;       // 所交易的合约代码
 extern TThostFtdcDirectionType gTradeDirection;               // 买卖方向
 extern TThostFtdcPriceType gLimitPrice;                       // 交易价格
@@ -23,6 +18,27 @@ TThostFtdcOrderRefType	order_ref;	//报单引用
 time_t lOrderTime;
 time_t lOrderOkTime;
 
+// constructure
+CustomTrade* CustomTrade::CreateCustomTrade(
+	TThostFtdcInvestorIDType gInvesterID,
+	TThostFtdcPasswordType gInvesterPassword,
+	char dataDirPath[] = "/home/huziang/Desktop/api/Test/data/Td",
+	bool isParallel = false,
+	TThostFtdcBrokerIDType gBrokerID = "9999", 
+	char gTradeFrontAddr[] = "tcp://180.168.146.187:10001")
+{
+	CustomTrade *newCustomTrade = new CustomTrade(gBrokerID, gInvesterID, gInvesterPassword, dataDirPath);
+	newCustomTrade->isParallel = isParallel;
+    newCustomTrade->nRequestID = 0;
+    newCustomTrade->isLogin = false;
+
+	newCustomTrade->pTradeUserApi = CThostFtdcTradeApi::CreateFtdcTradeApi(dataDirPath);
+	newCustomTrade->pTradeUserApi->RegisterSpi(newCustomTrade);
+	newCustomTrade->pTradeUserApi->RegisterFront(gTradeFrontAddr);
+	newCustomTrade->pTradeUserApi->Init();
+
+	return newCustomTrade;
+}
 
 
 void CustomTradeSpi::OnFrontConnected()

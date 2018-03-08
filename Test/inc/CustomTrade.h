@@ -1,17 +1,58 @@
 #pragma once
 // ---- 派生的交易类 ---- //
 #include "ThostFtdcTraderApi.h"
+#include "CustomUser.h"
+#include "CustomSemaphore.h"
 
-class CustomTradeSpi : public CThostFtdcTraderSpi
+class CustomTrade : public CThostFtdcTraderSpi, public CustomUser, public Semaphore
 {
 private:
+	bool isParallel;                          // parallel or not
+	int nRequestID;                           // request ID
+	bool isLogin;                             // user has login or not
+
 	CThostFtdcTraderApi *pTradeUserApi;       // Td api
 
-	TThostFtdcBrokerIDType sBrokerID;         // broker ID
-	TThostFtdcInvestorIDType sInvesterID;     // user ID
-	TThostFtdcPasswordType sInvesterPassword; // user password
+/* ----- Custom Function ----- */
+public:
+	/// constructure function
+	/// dataDirPath must be absolute
+	static CustomTrade* CreateCustomTrade(
+		TThostFtdcInvestorIDType gInvesterID,
+		TThostFtdcPasswordType gInvesterPassword,
+		char dataDirPath[] = "/home/huziang/Desktop/api/Test/data/Td",
+		bool isParallel = false,
+		TThostFtdcBrokerIDType gBrokerID = "9999", 
+		char gMdFrontAddr[] = "tcp://180.168.146.187:10001");
 
-/* ----- ctp_api部分回调接口 ----- */
+	/// constructure function
+	CustomTrade(
+		TThostFtdcBrokerIDType gBrokerID,
+		TThostFtdcInvestorIDType gInvesterID,
+		TThostFtdcPasswordType gInvesterPassword,
+		char *dataDirPath) 
+		: CustomUser(gBrokerID, gInvesterID, gInvesterPassword, dataDirPath) {}
+
+
+	void reqOrderInsert(
+		TThostFtdcInstrumentIDType instrumentID,
+		TThostFtdcPriceType price,
+		TThostFtdcVolumeType volume,
+		TThostFtdcDirectionType direction); // 个性化报单录入，外部调用
+	void reqUserLogin(); // 登录请求
+	void reqUserLogout(); // 登出请求
+	void reqSettlementInfoConfirm(); // 投资者结果确认
+	void reqQueryInstrument(); // 请求查询合约
+	void reqQueryTradingAccount(); // 请求查询资金帐户
+	void reqQueryInvestorPosition(); // 请求查询投资者持仓
+	void reqOrderInsert(); // 请求报单录入
+	
+	void reqOrderAction(CThostFtdcOrderField *pOrder); // 请求报单操作
+	bool isErrorRspInfo(CThostFtdcRspInfoField *pRspInfo); // 是否收到错误信息
+	bool isMyOrder(CThostFtdcOrderField *pOrder); // 是否我的报单回报
+	bool isTradingOrder(CThostFtdcOrderField *pOrder); // 是否正在交易的报单
+
+/* ----- Overlap the TdSpi ----- */
 public:
 	///当客户端与交易后台建立起通信连接时（还未登录前），该方法被调用。
 	void OnFrontConnected();
@@ -54,26 +95,4 @@ public:
 
 	///成交通知
 	void OnRtnTrade(CThostFtdcTradeField *pTrade);
-	
-// ---- 自定义函数 ---- //
-public:
-	bool loginFlag; // 登陆成功的标识
-	void reqOrderInsert(
-		TThostFtdcInstrumentIDType instrumentID,
-		TThostFtdcPriceType price,
-		TThostFtdcVolumeType volume,
-		TThostFtdcDirectionType direction); // 个性化报单录入，外部调用
-private:
-	void reqUserLogin(); // 登录请求
-	void reqUserLogout(); // 登出请求
-	void reqSettlementInfoConfirm(); // 投资者结果确认
-	void reqQueryInstrument(); // 请求查询合约
-	void reqQueryTradingAccount(); // 请求查询资金帐户
-	void reqQueryInvestorPosition(); // 请求查询投资者持仓
-	void reqOrderInsert(); // 请求报单录入
-	
-	void reqOrderAction(CThostFtdcOrderField *pOrder); // 请求报单操作
-	bool isErrorRspInfo(CThostFtdcRspInfoField *pRspInfo); // 是否收到错误信息
-	bool isMyOrder(CThostFtdcOrderField *pOrder); // 是否我的报单回报
-	bool isTradingOrder(CThostFtdcOrderField *pOrder); // 是否正在交易的报单
 };

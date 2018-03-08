@@ -7,61 +7,52 @@
 #include "CustomMd.h"
 #include "TickToKlineHelper.h"
 
-using std::cout;
 using std::endl;
 using std::cerr;
+using std::cout;
 
-// global value from main.cpp
-// extern char dataDicPath[100];                    // data's dictionary path
-// extern TThostFtdcBrokerIDType gBrokerID;         // 模拟经纪商代码
-// extern TThostFtdcInvestorIDType gInvesterID;     // 投资者账户名
-// extern TThostFtdcPasswordType gInvesterPassword; // 投资者密码
-
-// extern CThostFtdcMdApi *gp_MdUserApi;            // 行情指针
-// extern char gMdFrontAddr[50];                    // 模拟行情前置地址
-// extern char *gp_InstrumentID[];                  // 行情合约代码列表，中、上、大、郑交易所各选一种
-// extern int instrumentNum;                        // 行情合约订阅数量
-
-// extern std::unordered_map<std::string, TickToKlineHelper> g_KlineHash; // k线存储表
-
-// structure
-CustomMd::CustomMd(
+// constructure
+CustomMd* CustomMd::CreateCustomMd(
 	TThostFtdcInvestorIDType gInvesterID,
 	TThostFtdcPasswordType gInvesterPassword,
+	char dataDirPath[],
+	bool isParallel,
 	TThostFtdcBrokerIDType gBrokerID, 
-	char gMdFrontAddr[],
-	char dataDicPath[])
+	char gMdFrontAddr[])
 {
-	strcpy(this->sBrokerID, gBrokerID);
-	strcpy(this->sInvesterID, gInvesterID);
-	strcpy(this->sInvesterPassword, gInvesterPassword);
-	vSubInstrumentID = vector<char*>();
-	vQuoteInstrumentID = vector<char*>();
-  nRequestID = 0;
+	CustomMd *newCustomMd = new CustomMd(gBrokerID, gInvesterID, gInvesterPassword, dataDirPath);
 
-	pMdUserApi = CThostFtdcMdApi::CreateFtdcMdApi(dataDicPath);
-	pMdUserApi->RegisterSpi(this);
-	pMdUserApi->RegisterFront(gMdFrontAddr);
-	pMdUserApi->Init();
+	newCustomMd->isParallel = isParallel;
+    newCustomMd->nRequestID = 0;
+
+	newCustomMd->pMdUserApi = CThostFtdcMdApi::CreateFtdcMdApi(dataDirPath);
+	newCustomMd->pMdUserApi->RegisterSpi(newCustomMd);
+	newCustomMd->pMdUserApi->RegisterFront(gMdFrontAddr);
+	newCustomMd->pMdUserApi->Init();
+
+	return newCustomMd;
 }
 
 // instructure
 CustomMd::~CustomMd() {
 	// clear vector
-	for (char *str : vSubInstrumentID) {
-		delete[] str;
-	}
-	for (char *str : vQuoteInstrumentID) {
-		delete[] str;
-	}
-	vSubInstrumentID.clear();
-	vQuoteInstrumentID.clear();
+	// for (char *str : vSubInstrumentID) {
+	// 	delete[] str;
+	// }
+	// for (char *str : vQuoteInstrumentID) {
+	// 	delete[] str;
+	// }
+	// vSubInstrumentID.clear();
+	// vQuoteInstrumentID.clear();
+	
+	delete[] dataDirPath;
 
+	pMdUserApi->Join();
 	pMdUserApi->Release();
 }
 
 // login user
-void userLogin() {
+void CustomMd::userLogin() {
   CThostFtdcReqUserLoginField *loginUserInfo = new CThostFtdcReqUserLoginField();
   strcpy(loginUserInfo->BrokerID, this->sBrokerID);
   strcpy(loginUserInfo->UserID, this->sInvesterID);
@@ -70,26 +61,34 @@ void userLogin() {
 }
 
 // logout user
-void userLogout() {
+void CustomMd::userLogout() {
   CThostFtdcUserLogoutField *logoutUserInfo = new CThostFtdcUserLogoutField();
   strcpy(logoutUserInfo->BrokerID, this->sBrokerID);
   strcpy(logoutUserInfo->UserID, this->sInvesterID);
-	pMdUserApi->ReqUserLogout(logoutUserInfo, nRequestID);
+  pMdUserApi->ReqUserLogout(logoutUserInfo, nRequestID);
 }
 
-void subscribeInstrument() {
+void CustomMd::subscribeInstrument(char *ppInstrumentID[], int nCount) {
+	if (!isParallel) {
+		wait();
+	}
+	pMdUserApi->SubscribeMarketData(ppInstrumentID, nCount);
+}
+
+void CustomMd::unsubscribeInstrument(char *ppInstrumentID[], int nCount) {
+	if (!isParallel) {
+		wait();
+	}
+	pMdUserApi->UnSubscribeMarketData(ppInstrumentID, nCount);
+}
+
+// undefined
+void CustomMd::quoteInstrument() {
 
 }
 
-void unsubscribeInstrument() {
-
-}
-
-void quoteInstrument() {
-
-}
-
-void unQuoteInstrument() {
+// undefined
+void CustomMd::unQuoteInstrument() {
 
 }
 
@@ -111,16 +110,16 @@ void CustomMd::OnFrontConnected()
 	// 开始登录
 	CThostFtdcReqUserLoginField loginReq;
 	memset(&loginReq, 0, sizeof(loginReq));
-	strcpy(loginReq.BrokerID, gBrokerID);
-	strcpy(loginReq.UserID, gInvesterID);
-	strcpy(loginReq.Password, gInvesterPassword);
-	static int requestID = 0; // 请求编号
+	strcpy(loginReq.BrokerID, sBrokerID);
+	strcpy(loginReq.UserID, sInvesterID);
+	strcpy(loginReq.Password, sInvesterPassword);
 
-	int rt = gp_MdUserApi->ReqUserLogin(&loginReq, requestID);
+	int rt = pMdUserApi->ReqUserLogin(&loginReq, nRequestID);
 	if (!rt)
 		cout << ">>>>> Send user request success" << endl;
 	else
 		cerr << "!!!!! Send user request failed" << endl;
+	signal();
 }
 
 // 断开连接通知
@@ -153,13 +152,6 @@ void CustomMd::OnRspUserLogin(
 		cout << "Login time: " << pRspUserLogin->LoginTime << endl;
 		cout << "Broker ID: " << pRspUserLogin->BrokerID << endl;
 		cout << "User ID: " << pRspUserLogin->UserID << endl;
-		
-		// 开始订阅行情
-		int rt = gp_MdUserApi->SubscribeMarketData(gp_InstrumentID, instrumentNum);
-		if (!rt)
-			cout << ">>>>> Send subscribed market data request success" << endl;
-		else
-			cerr << "!!!!! Send subscribed market data request failed" << endl;
 	}
 	else {
 		cerr << "===== Login Failed =====" << endl;
@@ -212,8 +204,8 @@ void CustomMd::OnRspSubMarketData(
 		cout << "Intrument ID: " << pSpecificInstrument->InstrumentID << endl;
 		// 如果需要存入文件或者数据库，在这里创建表头,不同的合约单独存储
 		char filePath[100];
-		strncpy(filePath, dataDicPath, 100);
-		sprintf(filePath, "%s_market_data.csv", pSpecificInstrument->InstrumentID);
+		sprintf(filePath, "%s%s_market_data.csv", dataDirPath, pSpecificInstrument->InstrumentID);
+
 		if ( (access(filePath, W_OK)) == -1 ) 
 		{
 			FILE* fd = fopen(filePath, "w");
@@ -234,6 +226,7 @@ void CustomMd::OnRspSubMarketData(
 		cerr << "===== Subscribe Market Data Failed =====" << endl;
 		showErrorMessage(pRspInfo);
 	}
+	signal();
 }
 
 // 取消订阅行情应答
@@ -253,6 +246,7 @@ void CustomMd::OnRspUnSubMarketData(
 		cerr << "===== Unsubscribe Market Data Failed =====" << endl;
 		showErrorMessage(pRspInfo);
 	}
+	signal();
 }
 
 // 订阅询价应答
@@ -317,8 +311,7 @@ void CustomMd::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMarket
 
 	// 如果只获取某一个合约行情，可以逐tick地存入文件或数据库
 	char filePath[100];
-	strncpy(filePath, dataDicPath, 100);
-	sprintf(filePath, "%s_market_data.csv", pDepthMarketData->InstrumentID);
+	sprintf(filePath, "%s%s_market_data.csv", dataDirPath, pDepthMarketData->InstrumentID);
 
 	if ( (access(filePath, W_OK)) == -1 ){
 		cerr << "!!!!! File " << filePath << " not exist!" << endl;

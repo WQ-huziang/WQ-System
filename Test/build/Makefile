@@ -111,30 +111,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named TickToKlineHelper_static
+# Target rules for targets named CustomMd_static
 
 # Build rule for target.
-TickToKlineHelper_static: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TickToKlineHelper_static
-.PHONY : TickToKlineHelper_static
+CustomMd_static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CustomMd_static
+.PHONY : CustomMd_static
 
 # fast build rule for target.
-TickToKlineHelper_static/fast:
-	$(MAKE) -f src/CMakeFiles/TickToKlineHelper_static.dir/build.make src/CMakeFiles/TickToKlineHelper_static.dir/build
-.PHONY : TickToKlineHelper_static/fast
+CustomMd_static/fast:
+	$(MAKE) -f src/CMakeFiles/CustomMd_static.dir/build.make src/CMakeFiles/CustomMd_static.dir/build
+.PHONY : CustomMd_static/fast
 
 #=============================================================================
-# Target rules for targets named CustomMdSpi_static
+# Target rules for targets named CustomMd
 
 # Build rule for target.
-CustomMdSpi_static: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CustomMdSpi_static
-.PHONY : CustomMdSpi_static
+CustomMd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CustomMd
+.PHONY : CustomMd
 
 # fast build rule for target.
-CustomMdSpi_static/fast:
-	$(MAKE) -f src/CMakeFiles/CustomMdSpi_static.dir/build.make src/CMakeFiles/CustomMdSpi_static.dir/build
-.PHONY : CustomMdSpi_static/fast
+CustomMd/fast:
+	$(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/build
+.PHONY : CustomMd/fast
 
 #=============================================================================
 # Target rules for targets named main
@@ -149,84 +149,6 @@ main/fast:
 	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-#=============================================================================
-# Target rules for targets named CustomTradeSpi_static
-
-# Build rule for target.
-CustomTradeSpi_static: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CustomTradeSpi_static
-.PHONY : CustomTradeSpi_static
-
-# fast build rule for target.
-CustomTradeSpi_static/fast:
-	$(MAKE) -f src/CMakeFiles/CustomTradeSpi_static.dir/build.make src/CMakeFiles/CustomTradeSpi_static.dir/build
-.PHONY : CustomTradeSpi_static/fast
-
-#=============================================================================
-# Target rules for targets named CustomMdSpi
-
-# Build rule for target.
-CustomMdSpi: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CustomMdSpi
-.PHONY : CustomMdSpi
-
-# fast build rule for target.
-CustomMdSpi/fast:
-	$(MAKE) -f src/CMakeFiles/CustomMdSpi.dir/build.make src/CMakeFiles/CustomMdSpi.dir/build
-.PHONY : CustomMdSpi/fast
-
-#=============================================================================
-# Target rules for targets named StrategyTrade
-
-# Build rule for target.
-StrategyTrade: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 StrategyTrade
-.PHONY : StrategyTrade
-
-# fast build rule for target.
-StrategyTrade/fast:
-	$(MAKE) -f src/CMakeFiles/StrategyTrade.dir/build.make src/CMakeFiles/StrategyTrade.dir/build
-.PHONY : StrategyTrade/fast
-
-#=============================================================================
-# Target rules for targets named StrategyTrade_static
-
-# Build rule for target.
-StrategyTrade_static: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 StrategyTrade_static
-.PHONY : StrategyTrade_static
-
-# fast build rule for target.
-StrategyTrade_static/fast:
-	$(MAKE) -f src/CMakeFiles/StrategyTrade_static.dir/build.make src/CMakeFiles/StrategyTrade_static.dir/build
-.PHONY : StrategyTrade_static/fast
-
-#=============================================================================
-# Target rules for targets named CustomTradeSpi
-
-# Build rule for target.
-CustomTradeSpi: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CustomTradeSpi
-.PHONY : CustomTradeSpi
-
-# fast build rule for target.
-CustomTradeSpi/fast:
-	$(MAKE) -f src/CMakeFiles/CustomTradeSpi.dir/build.make src/CMakeFiles/CustomTradeSpi.dir/build
-.PHONY : CustomTradeSpi/fast
-
-#=============================================================================
-# Target rules for targets named TickToKlineHelper
-
-# Build rule for target.
-TickToKlineHelper: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TickToKlineHelper
-.PHONY : TickToKlineHelper
-
-# fast build rule for target.
-TickToKlineHelper/fast:
-	$(MAKE) -f src/CMakeFiles/TickToKlineHelper.dir/build.make src/CMakeFiles/TickToKlineHelper.dir/build
-.PHONY : TickToKlineHelper/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -235,15 +157,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... TickToKlineHelper_static"
-	@echo "... CustomMdSpi_static"
+	@echo "... CustomMd_static"
+	@echo "... CustomMd"
 	@echo "... main"
-	@echo "... CustomTradeSpi_static"
-	@echo "... CustomMdSpi"
-	@echo "... StrategyTrade"
-	@echo "... StrategyTrade_static"
-	@echo "... CustomTradeSpi"
-	@echo "... TickToKlineHelper"
 .PHONY : help
 
 

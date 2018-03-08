@@ -178,6 +178,12 @@ CustomMdSpi_LIB_DEPENDS:STATIC=
 CustomMdSpi_static_LIB_DEPENDS:STATIC=
 
 //Dependencies for target
+CustomMd_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+CustomMd_static_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
 CustomTradeSpi_LIB_DEPENDS:STATIC=
 
 //Dependencies for target

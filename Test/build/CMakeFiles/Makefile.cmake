@@ -43,13 +43,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "src/CMakeFiles/TickToKlineHelper_static.dir/DependInfo.cmake"
-  "src/CMakeFiles/CustomMdSpi_static.dir/DependInfo.cmake"
+  "src/CMakeFiles/CustomMd_static.dir/DependInfo.cmake"
+  "src/CMakeFiles/CustomMd.dir/DependInfo.cmake"
   "src/CMakeFiles/main.dir/DependInfo.cmake"
-  "src/CMakeFiles/CustomTradeSpi_static.dir/DependInfo.cmake"
-  "src/CMakeFiles/CustomMdSpi.dir/DependInfo.cmake"
-  "src/CMakeFiles/StrategyTrade.dir/DependInfo.cmake"
-  "src/CMakeFiles/StrategyTrade_static.dir/DependInfo.cmake"
-  "src/CMakeFiles/CustomTradeSpi.dir/DependInfo.cmake"
-  "src/CMakeFiles/TickToKlineHelper.dir/DependInfo.cmake"
   )
