@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libCustomCtpMd.a  CMakeFiles/CustomCtpMd_static.dir/CustomCtpMd.cpp.o
+/usr/bin/ranlib ../../lib/libCustomCtpMd.a

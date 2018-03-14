@@ -57,38 +57,38 @@ include src/CMakeFiles/main.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/main.dir/flags.make
 
-src/CMakeFiles/main.dir/main.cpp.o: src/CMakeFiles/main.dir/flags.make
-src/CMakeFiles/main.dir/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/main.dir/main.cpp.o"
-	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c /home/huziang/Desktop/api/Test/src/main.cpp
+src/CMakeFiles/main.dir/mdserver/main.cpp.o: src/CMakeFiles/main.dir/flags.make
+src/CMakeFiles/main.dir/mdserver/main.cpp.o: ../src/mdserver/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/main.dir/mdserver/main.cpp.o"
+	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/mdserver/main.cpp.o -c /home/huziang/Desktop/api/Test/src/mdserver/main.cpp
 
-src/CMakeFiles/main.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/huziang/Desktop/api/Test/src/main.cpp > CMakeFiles/main.dir/main.cpp.i
+src/CMakeFiles/main.dir/mdserver/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/mdserver/main.cpp.i"
+	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/huziang/Desktop/api/Test/src/mdserver/main.cpp > CMakeFiles/main.dir/mdserver/main.cpp.i
 
-src/CMakeFiles/main.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/huziang/Desktop/api/Test/src/main.cpp -o CMakeFiles/main.dir/main.cpp.s
+src/CMakeFiles/main.dir/mdserver/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/mdserver/main.cpp.s"
+	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/huziang/Desktop/api/Test/src/mdserver/main.cpp -o CMakeFiles/main.dir/mdserver/main.cpp.s
 
-src/CMakeFiles/main.dir/main.cpp.o.requires:
+src/CMakeFiles/main.dir/mdserver/main.cpp.o.requires:
 
-.PHONY : src/CMakeFiles/main.dir/main.cpp.o.requires
+.PHONY : src/CMakeFiles/main.dir/mdserver/main.cpp.o.requires
 
-src/CMakeFiles/main.dir/main.cpp.o.provides: src/CMakeFiles/main.dir/main.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.cpp.o.provides.build
-.PHONY : src/CMakeFiles/main.dir/main.cpp.o.provides
+src/CMakeFiles/main.dir/mdserver/main.cpp.o.provides: src/CMakeFiles/main.dir/mdserver/main.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/mdserver/main.cpp.o.provides.build
+.PHONY : src/CMakeFiles/main.dir/mdserver/main.cpp.o.provides
 
-src/CMakeFiles/main.dir/main.cpp.o.provides.build: src/CMakeFiles/main.dir/main.cpp.o
+src/CMakeFiles/main.dir/mdserver/main.cpp.o.provides.build: src/CMakeFiles/main.dir/mdserver/main.cpp.o
 
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/main.cpp.o"
+"CMakeFiles/main.dir/mdserver/main.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
-../bin/main: src/CMakeFiles/main.dir/main.cpp.o
+../bin/main: src/CMakeFiles/main.dir/mdserver/main.cpp.o
 ../bin/main: src/CMakeFiles/main.dir/build.make
 ../bin/main: ../lib/libCustomMd.so.1.2
 ../bin/main: ../lib/libCustomTrade.so.1.2
@@ -101,7 +101,7 @@ src/CMakeFiles/main.dir/build: ../bin/main
 
 .PHONY : src/CMakeFiles/main.dir/build
 
-src/CMakeFiles/main.dir/requires: src/CMakeFiles/main.dir/main.cpp.o.requires
+src/CMakeFiles/main.dir/requires: src/CMakeFiles/main.dir/mdserver/main.cpp.o.requires
 
 .PHONY : src/CMakeFiles/main.dir/requires
 

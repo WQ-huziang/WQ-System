@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -std=c++11 -g  -shared -Wl,-soname,libCustomCtpTrade.so.1 -o ../../lib/libCustomCtpTrade.so.1.2 CMakeFiles/CustomCtpTrade.dir/CustomCtpTrade.cpp.o  -L/home/huziang/Desktop/api/Test/lib 

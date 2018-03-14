@@ -16,14 +16,6 @@ CustomSemaphore.h
 
 ../inc/CustomSemaphore.h
 
-../inc/CustomTrade.h
-ThostFtdcTraderApi.h
-../inc/ThostFtdcTraderApi.h
-CustomUser.h
-../inc/CustomUser.h
-CustomSemaphore.h
-../inc/CustomSemaphore.h
-
 ../inc/CustomUser.h
 cstring
 -
@@ -32,11 +24,21 @@ cstdio
 ThostFtdcUserApiDataType.h
 ../inc/ThostFtdcUserApiDataType.h
 
-../inc/ThostFtdcMdApi.h
-ThostFtdcUserApiStruct.h
-../inc/ThostFtdcUserApiStruct.h
+../inc/Iniline.h
+unistd.h
+-
+fcntl.h
+-
+stdio.h
+-
+stdlib.h
+-
+stdarg.h
+-
+string.h
+-
 
-../inc/ThostFtdcTraderApi.h
+../inc/ThostFtdcMdApi.h
 ThostFtdcUserApiStruct.h
 ../inc/ThostFtdcUserApiStruct.h
 
@@ -46,21 +48,19 @@ ThostFtdcUserApiStruct.h
 ThostFtdcUserApiDataType.h
 ../inc/ThostFtdcUserApiDataType.h
 
-/home/huziang/Desktop/api/Test/src/main.cpp
+/home/huziang/Desktop/api/Test/src/mdserver/main.cpp
 iostream
 -
 stdio.h
 -
 string
 -
-unordered_map
--
 ThostFtdcUserApiStruct.h
-/home/huziang/Desktop/api/Test/src/ThostFtdcUserApiStruct.h
+/home/huziang/Desktop/api/Test/src/mdserver/ThostFtdcUserApiStruct.h
 ThostFtdcUserApiDataType.h
-/home/huziang/Desktop/api/Test/src/ThostFtdcUserApiDataType.h
+/home/huziang/Desktop/api/Test/src/mdserver/ThostFtdcUserApiDataType.h
 CustomMd.h
-/home/huziang/Desktop/api/Test/src/CustomMd.h
-CustomTrade.h
-/home/huziang/Desktop/api/Test/src/CustomTrade.h
+/home/huziang/Desktop/api/Test/src/mdserver/CustomMd.h
+Iniline.h
+/home/huziang/Desktop/api/Test/src/mdserver/Iniline.h
 

@@ -124,30 +124,17 @@ CustomMd_static/fast:
 .PHONY : CustomMd_static/fast
 
 #=============================================================================
-# Target rules for targets named CustomTrade
+# Target rules for targets named CustomCtpTrade
 
 # Build rule for target.
-CustomTrade: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CustomTrade
-.PHONY : CustomTrade
+CustomCtpTrade: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CustomCtpTrade
+.PHONY : CustomCtpTrade
 
 # fast build rule for target.
-CustomTrade/fast:
-	$(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/build
-.PHONY : CustomTrade/fast
-
-#=============================================================================
-# Target rules for targets named main
-
-# Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main
-.PHONY : main
-
-# fast build rule for target.
-main/fast:
-	$(MAKE) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
-.PHONY : main/fast
+CustomCtpTrade/fast:
+	$(MAKE) -f src/CMakeFiles/CustomCtpTrade.dir/build.make src/CMakeFiles/CustomCtpTrade.dir/build
+.PHONY : CustomCtpTrade/fast
 
 #=============================================================================
 # Target rules for targets named CustomMd
@@ -163,17 +150,82 @@ CustomMd/fast:
 .PHONY : CustomMd/fast
 
 #=============================================================================
-# Target rules for targets named CustomTrade_static
+# Target rules for targets named mdserver
 
 # Build rule for target.
-CustomTrade_static: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 CustomTrade_static
-.PHONY : CustomTrade_static
+mdserver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mdserver
+.PHONY : mdserver
 
 # fast build rule for target.
-CustomTrade_static/fast:
-	$(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/build
-.PHONY : CustomTrade_static/fast
+mdserver/fast:
+	$(MAKE) -f src/CMakeFiles/mdserver.dir/build.make src/CMakeFiles/mdserver.dir/build
+.PHONY : mdserver/fast
+
+#=============================================================================
+# Target rules for targets named CustomCtpTrade_static
+
+# Build rule for target.
+CustomCtpTrade_static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CustomCtpTrade_static
+.PHONY : CustomCtpTrade_static
+
+# fast build rule for target.
+CustomCtpTrade_static/fast:
+	$(MAKE) -f src/CMakeFiles/CustomCtpTrade_static.dir/build.make src/CMakeFiles/CustomCtpTrade_static.dir/build
+.PHONY : CustomCtpTrade_static/fast
+
+#=============================================================================
+# Target rules for targets named tradeserver
+
+# Build rule for target.
+tradeserver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tradeserver
+.PHONY : tradeserver
+
+# fast build rule for target.
+tradeserver/fast:
+	$(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/build
+.PHONY : tradeserver/fast
+
+#=============================================================================
+# Target rules for targets named controlunit
+
+# Build rule for target.
+controlunit: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controlunit
+.PHONY : controlunit
+
+# fast build rule for target.
+controlunit/fast:
+	$(MAKE) -f src/CMakeFiles/controlunit.dir/build.make src/CMakeFiles/controlunit.dir/build
+.PHONY : controlunit/fast
+
+#=============================================================================
+# Target rules for targets named CustomCtpMd_static
+
+# Build rule for target.
+CustomCtpMd_static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CustomCtpMd_static
+.PHONY : CustomCtpMd_static
+
+# fast build rule for target.
+CustomCtpMd_static/fast:
+	$(MAKE) -f src/CMakeFiles/CustomCtpMd_static.dir/build.make src/CMakeFiles/CustomCtpMd_static.dir/build
+.PHONY : CustomCtpMd_static/fast
+
+#=============================================================================
+# Target rules for targets named CustomCtpMd
+
+# Build rule for target.
+CustomCtpMd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 CustomCtpMd
+.PHONY : CustomCtpMd
+
+# fast build rule for target.
+CustomCtpMd/fast:
+	$(MAKE) -f src/CMakeFiles/CustomCtpMd.dir/build.make src/CMakeFiles/CustomCtpMd.dir/build
+.PHONY : CustomCtpMd/fast
 
 # Help Target
 help:
@@ -184,10 +236,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CustomMd_static"
-	@echo "... CustomTrade"
-	@echo "... main"
+	@echo "... CustomCtpTrade"
 	@echo "... CustomMd"
-	@echo "... CustomTrade_static"
+	@echo "... mdserver"
+	@echo "... CustomCtpTrade_static"
+	@echo "... tradeserver"
+	@echo "... controlunit"
+	@echo "... CustomCtpMd_static"
+	@echo "... CustomCtpMd"
 .PHONY : help
 
 

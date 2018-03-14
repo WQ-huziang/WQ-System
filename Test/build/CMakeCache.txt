@@ -172,6 +172,18 @@ CTP_PROJECT_BINARY_DIR:STATIC=/home/huziang/Desktop/api/Test/build
 CTP_PROJECT_SOURCE_DIR:STATIC=/home/huziang/Desktop/api/Test
 
 //Dependencies for target
+CustomCtpMd_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+CustomCtpMd_static_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+CustomCtpTrade_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+CustomCtpTrade_static_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
 CustomMdSpi_LIB_DEPENDS:STATIC=
 
 //Dependencies for target
@@ -194,6 +206,12 @@ CustomTrade_LIB_DEPENDS:STATIC=
 
 //Dependencies for target
 CustomTrade_static_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+Iniline_LIB_DEPENDS:STATIC=
+
+//Dependencies for target
+Iniline_static_LIB_DEPENDS:STATIC=
 
 //Dependencies for target
 StrategyTrade_LIB_DEPENDS:STATIC=

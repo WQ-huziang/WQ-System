@@ -44,8 +44,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/CustomMd_static.dir/DependInfo.cmake"
-  "src/CMakeFiles/CustomTrade.dir/DependInfo.cmake"
-  "src/CMakeFiles/main.dir/DependInfo.cmake"
+  "src/CMakeFiles/CustomCtpTrade.dir/DependInfo.cmake"
   "src/CMakeFiles/CustomMd.dir/DependInfo.cmake"
-  "src/CMakeFiles/CustomTrade_static.dir/DependInfo.cmake"
+  "src/CMakeFiles/mdserver.dir/DependInfo.cmake"
+  "src/CMakeFiles/CustomCtpTrade_static.dir/DependInfo.cmake"
+  "src/CMakeFiles/tradeserver.dir/DependInfo.cmake"
+  "src/CMakeFiles/controlunit.dir/DependInfo.cmake"
+  "src/CMakeFiles/CustomCtpMd_static.dir/DependInfo.cmake"
+  "src/CMakeFiles/CustomCtpMd.dir/DependInfo.cmake"
   )

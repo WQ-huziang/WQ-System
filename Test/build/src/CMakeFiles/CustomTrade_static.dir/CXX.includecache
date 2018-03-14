@@ -6,33 +6,33 @@
 
 #IncludeRegexTransform: 
 
-../inc/CustomSemaphore.h
+../inc/api/ctp/ThostFtdcTraderApi.h
+ThostFtdcUserApiStruct.h
+../inc/api/ctp/ThostFtdcUserApiStruct.h
 
-../inc/CustomTrade.h
-ThostFtdcTraderApi.h
-../inc/ThostFtdcTraderApi.h
-CustomUser.h
-../inc/CustomUser.h
-CustomSemaphore.h
-../inc/CustomSemaphore.h
+../inc/api/ctp/ThostFtdcUserApiDataType.h
 
-../inc/CustomUser.h
+../inc/api/ctp/ThostFtdcUserApiStruct.h
+ThostFtdcUserApiDataType.h
+../inc/api/ctp/ThostFtdcUserApiDataType.h
+
+../inc/td/CustomTrade.h
+api/ctp/ThostFtdcTraderApi.h
+../inc/td/api/ctp/ThostFtdcTraderApi.h
+util/CustomUser.h
+../inc/td/util/CustomUser.h
+util/CustomSemaphore.h
+../inc/td/util/CustomSemaphore.h
+
+../inc/util/CustomSemaphore.h
+
+../inc/util/CustomUser.h
 cstring
 -
 cstdio
 -
-ThostFtdcUserApiDataType.h
-../inc/ThostFtdcUserApiDataType.h
-
-../inc/ThostFtdcTraderApi.h
-ThostFtdcUserApiStruct.h
-../inc/ThostFtdcUserApiStruct.h
-
-../inc/ThostFtdcUserApiDataType.h
-
-../inc/ThostFtdcUserApiStruct.h
-ThostFtdcUserApiDataType.h
-../inc/ThostFtdcUserApiDataType.h
+api/ctp/ThostFtdcUserApiDataType.h
+../inc/util/api/ctp/ThostFtdcUserApiDataType.h
 
 /home/huziang/Desktop/api/Test/src/CustomTrade.cpp
 iostream
@@ -45,6 +45,6 @@ chrono
 -
 cstring
 -
-CustomTrade.h
-/home/huziang/Desktop/api/Test/src/CustomTrade.h
+td/CustomTrade.h
+/home/huziang/Desktop/api/Test/src/td/CustomTrade.h
 
