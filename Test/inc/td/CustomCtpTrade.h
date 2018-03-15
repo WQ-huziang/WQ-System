@@ -23,9 +23,9 @@ public:
 	/// constructure function
 	/// dataDirPath must be absolute
 	static CustomCtpTrade* CreateCustomCtpTrade(
-		TThostFtdcBrokerIDType gBrokerID,
 		TThostFtdcInvestorIDType gInvesterID,
 		TThostFtdcPasswordType gInvesterPassword,
+		TThostFtdcBrokerIDType gBrokerID,
 		char dataDirPath[],
 		char gMdFrontAddr[],
 		int clientID,
@@ -46,6 +46,8 @@ public:
 	void UserLogin();
 
 	void UserLogout();
+
+	void SettlementConfirm();
 
 	/// insert order
 	void OrderInsert(WZInputOrderField &order);
@@ -84,7 +86,7 @@ public:
 	void OnRspUserLogout(CThostFtdcUserLogoutField *pUserLogout, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
 	///投资者结算结果确认响应
-	//void OnRspSettlementInfoConfirm(CThostFtdcSettlementInfoConfirmField *pSettlementInfoConfirm, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
+	void OnRspSettlementInfoConfirm(CThostFtdcSettlementInfoConfirmField *pSettlementInfoConfirm, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);
 
 	///请求查询合约响应
 	//void OnRspQryInstrument(CThostFtdcInstrumentField *pInstrument, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast);

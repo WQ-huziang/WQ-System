@@ -53,16 +53,16 @@ struct UdpServer {
     	printf("waiting for a packet...\n");  
       
     	// get udp package
-    	if ((len=recvfrom(server_sockfd,buf,BUFSIZ,0,(struct sockaddr *)&recv_addr,&sin_size))<0)  
-    	{  
+    	if ((len=recvfrom(server_sockfd,buf,BUFSIZ,0,(struct sockaddr *)&recv_addr,(socklen_t*)&sin_size))<0)  
+    	{
+            //fprintf(stderr, "Error code:%d\n", errno);
         	perror("recvfrom error");
             mylock->unlock(); 
         	return false;  
     	}  
 
-    	printf("received packet from %s:\n",inet_ntoa(recv_addr.sin_addr));  
-    	buf[len]='/0';
-        strcpy(data, buf);
+    	printf("received packet from %s\nreveived length: %s\n", inet_ntoa(recv_addr.sin_addr), len);  
+        memcpy(data, buf, len);
         mylock->unlock();
     	return true;
 	}

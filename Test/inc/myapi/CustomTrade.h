@@ -2,21 +2,19 @@
 
 #include "server/UdpServer.h"
 #include "server/UdpClient.h"
-#include "adapter/MdDataStruct.h"
-#include <pthread.h> 
+#include "adapter/MdDataStruct.h" 
 
 class CustomTrade {
 private:
 	UdpClient *client;
 	UdpServer *server;
-	pthread_t tid;
 
 public:
 	CustomTrade(int clientID, int serverID);
 
 	~CustomTrade();
 
-	static void ListenRequest(void*);
+	void ListenRequest(void*);
 
 	// my api
 	virtual void OrderInsert(WZInputOrderField &order) = 0;

@@ -14,7 +14,7 @@ adapter/Constant.h
 util/SocketConverter.h
 ../inc/adapter/util/SocketConverter.h
 
-../inc/api/ctp/ThostFtdcMdApi.h
+../inc/api/ctp/ThostFtdcTraderApi.h
 ThostFtdcUserApiStruct.h
 ../inc/api/ctp/ThostFtdcUserApiStruct.h
 
@@ -24,17 +24,7 @@ ThostFtdcUserApiStruct.h
 ThostFtdcUserApiDataType.h
 ../inc/api/ctp/ThostFtdcUserApiDataType.h
 
-../inc/md/CustomCtpMd.h
-myapi/CustomMd.h
-../inc/md/myapi/CustomMd.h
-api/ctp/ThostFtdcMdApi.h
-../inc/md/api/ctp/ThostFtdcMdApi.h
-util/CustomUser.h
-../inc/md/util/CustomUser.h
-util/CustomSemaphore.h
-../inc/md/util/CustomSemaphore.h
-
-../inc/myapi/CustomMd.h
+../inc/myapi/CustomTrade.h
 server/UdpServer.h
 ../inc/myapi/server/UdpServer.h
 server/UdpClient.h
@@ -80,6 +70,16 @@ stdio.h
 util/CustomSemaphore.h
 ../inc/server/util/CustomSemaphore.h
 
+../inc/td/CustomCtpTrade.h
+api/ctp/ThostFtdcTraderApi.h
+../inc/td/api/ctp/ThostFtdcTraderApi.h
+util/CustomUser.h
+../inc/td/util/CustomUser.h
+util/CustomSemaphore.h
+../inc/td/util/CustomSemaphore.h
+myapi/CustomTrade.h
+../inc/td/myapi/CustomTrade.h
+
 ../inc/util/CustomSemaphore.h
 
 ../inc/util/CustomUser.h
@@ -110,7 +110,7 @@ cstdio
 cstring
 -
 
-/home/huziang/Desktop/api/Test/src/mdserver/main.cpp
+/home/huziang/Desktop/api/Test/src/tradeserver/main.cpp
 iostream
 -
 stdio.h
@@ -128,11 +128,11 @@ netinet/in.h
 arpa/inet.h
 -
 api/ctp/ThostFtdcUserApiStruct.h
-/home/huziang/Desktop/api/Test/src/mdserver/api/ctp/ThostFtdcUserApiStruct.h
+/home/huziang/Desktop/api/Test/src/tradeserver/api/ctp/ThostFtdcUserApiStruct.h
 api/ctp/ThostFtdcUserApiDataType.h
-/home/huziang/Desktop/api/Test/src/mdserver/api/ctp/ThostFtdcUserApiDataType.h
-md/CustomCtpMd.h
-/home/huziang/Desktop/api/Test/src/mdserver/md/CustomCtpMd.h
+/home/huziang/Desktop/api/Test/src/tradeserver/api/ctp/ThostFtdcUserApiDataType.h
+td/CustomCtpTrade.h
+/home/huziang/Desktop/api/Test/src/tradeserver/td/CustomCtpTrade.h
 util/Iniline.h
-/home/huziang/Desktop/api/Test/src/mdserver/util/Iniline.h
+/home/huziang/Desktop/api/Test/src/tradeserver/util/Iniline.h
 

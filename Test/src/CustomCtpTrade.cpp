@@ -12,9 +12,9 @@ using std::endl;
 
 // constructure
 CustomCtpTrade* CustomCtpTrade::CreateCustomCtpTrade(
-	TThostFtdcBrokerIDType sBrokerID,
 	TThostFtdcInvestorIDType sInvesterID,
 	TThostFtdcPasswordType gInvesterPassword,
+	TThostFtdcBrokerIDType sBrokerID,
 	char dataDirPath[],
 	char gTradeFrontAddr[],
 	int clientID,
@@ -63,16 +63,31 @@ void CustomCtpTrade::UserLogout() {
 	strcpy(logoutReq.UserID, sInvesterID);
 	int rt = pTradeUserApi->ReqUserLogout(&logoutReq, nRequestID);
 	if (!rt) {
-		cout << ">>>>>> Send user logout request success" << endl;
-	}
-	else {
+		cout << ">>>>> Send user logout request success" << endl;
+	} else {
 		cerr << "!!!!! Send user logout request success" << endl;
+	}
+}
+
+void CustomCtpTrade::SettlementConfirm() {
+	CThostFtdcSettlementInfoConfirmField settlementInfoConfirm;
+	memset(&settlementInfoConfirm, 0, sizeof(settlementInfoConfirm));
+	strcpy(settlementInfoConfirm.BrokerID, sBrokerID);
+	strcpy(settlementInfoConfirm.InvestorID, sInvesterID);
+	int ret = pTradeUserApi->ReqSettlementInfoConfirm(&settlementInfoConfirm, nRequestID);
+	if (!ret) {
+		fprintf(fout, ">>>>> Send settle confirm request success\n");	
+	} else {
+		fprintf(ferr, "!!!!! Send settle confirm request success\n");
 	}
 }
 
 void CustomCtpTrade::OrderInsert(WZInputOrderField &order) 
 {
+	cout << order.InstrumentID << endl;
 	CThostFtdcInputOrderField orderInsertReq = parseTo(order);
+	///报单引用
+	strcpy(orderInsertReq.OrderRef, orderRef);
 
 	int rt = pTradeUserApi->ReqOrderInsert(&orderInsertReq, ++nRequestID);
 	if (!rt) {
@@ -148,11 +163,12 @@ void CustomCtpTrade::OnRspUserLogin(
 		tradeFrontID = pRspUserLogin->FrontID;
 		sessionID = pRspUserLogin->SessionID;
 		strcpy(orderRef, pRspUserLogin->MaxOrderRef);
+
+		SettlementConfirm();
 	} else {
 		fprintf(ferr, "===== Login failed =====\n");
 		showErrorMessage(pRspInfo);
 	}
-	mylock->unlock();
 }
 
 void CustomCtpTrade::OnRspError(CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast)
@@ -254,7 +270,23 @@ void CustomCtpTrade::OnRtnTrade(CThostFtdcTradeField *pTrade)
 	cout << "Open or close: " << pTrade->Direction << endl;
 }
 
-
+void CustomCtpTrade::OnRspSettlementInfoConfirm(
+	CThostFtdcSettlementInfoConfirmField *pSettlementInfoConfirm,
+	CThostFtdcRspInfoField *pRspInfo,
+	int nRequestID,
+	bool bIsLast)
+{
+	bool bResult = pRspInfo && (pRspInfo->ErrorID != 0);
+	if (!bResult) {
+		cout << "===== Settlement Confirm Success =====" << endl;
+		cout << "Confirm Date: " << pSettlementInfoConfirm->ConfirmDate << endl;
+		cout << "Confirm Time: " << pSettlementInfoConfirm->ConfirmTime << endl;
+		mylock->unlock();
+	} else {
+		fprintf(ferr, "===== Settlement Confirm Failed =====\n");
+		showErrorMessage(pRspInfo);
+	}
+}
 
 
 
@@ -468,23 +500,6 @@ void CustomCtpTrade::OnRtnTrade(CThostFtdcTradeField *pTrade)
 // 	orderActionSentFlag = true;
 // }
 
-
-
-// void CustomCtpTradeSpi::OnRspSettlementInfoConfirm(
-// 	CThostFtdcSettlementInfoConfirmField *pSettlementInfoConfirm,
-// 	CThostFtdcRspInfoField *pRspInfo,
-// 	int nRequestID,
-// 	bool bIsLast)
-// {
-// 	if (!isErrorRspInfo(pRspInfo))
-// 	{
-// 		cout << "=====投资者结算结果确认成功=====" << endl;
-// 		cout << "确认日期： " << pSettlementInfoConfirm->ConfirmDate << endl;
-// 		cout << "确认时间： " << pSettlementInfoConfirm->ConfirmTime << endl;
-// 		// 请求查询合约
-// 		reqQueryInstrument();
-// 	}
-// }
 
 // void CustomCtpTradeSpi::OnRspQryInstrument(
 // 	CThostFtdcInstrumentField *pInstrument,

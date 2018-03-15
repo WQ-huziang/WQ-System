@@ -93,6 +93,7 @@ mdserver_EXTERNAL_OBJECTS =
 ../bin/mdserver: ../lib/libCustomCtpMd.so.1.2
 ../bin/mdserver: ../lib/libCustomMd.so.1.2
 ../bin/mdserver: ../lib/libCustomCtpTrade.so.1.2
+../bin/mdserver: ../lib/libCustomTrade.so.1.2
 ../bin/mdserver: src/CMakeFiles/mdserver.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/mdserver"
 	cd /home/huziang/Desktop/api/Test/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mdserver.dir/link.txt --verbose=$(VERBOSE)

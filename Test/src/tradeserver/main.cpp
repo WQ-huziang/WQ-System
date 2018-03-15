@@ -18,9 +18,9 @@ using namespace std;
 int clientID;
 int serverID;
 
-// Md values
-CustomMd *customMdApi;                                             // my custom api
-TThostFtdcBrokerIDType gCompanyID = "9999";                        // company ID
+// Td values
+CustomTrade *customTradeApi;                                       // my custom api
+TThostFtdcBrokerIDType gCompanyID;                                 // company ID
 TThostFtdcInvestorIDType gInvesterID;                              // user ID
 TThostFtdcPasswordType gInvesterPassword;                          // user password
 char mdFrontAddr[MAX_LEN];                                         // Md front address
@@ -39,22 +39,24 @@ void init(char *filepath) {
 	char fullpath[MAX_LEN];
 	GetCurrentPath(fullpath, filepath);
 
-	cout << fullpath << endl;
+	cout << "Configfile path: " << fullpath << endl;
 
 	// get file values
 	char *str;
-	str = GetIniKeyString("MdInfo", "FrontAddr", fullpath);
+    str = GetIniKeyString("Public", "BrokerID", fullpath);
+    strcpy(gCompanyID, str);
+	str = GetIniKeyString("Public", "InvesterID", fullpath);
+	strcpy(gInvesterID, str);
+	str = GetIniKeyString("Public", "InvesterPassword", fullpath);
+	strcpy(gInvesterPassword, str);
+	str = GetIniKeyString("TradeInfo", "FrontAddr", fullpath);
 	strcpy(mdFrontAddr, str);
-	str = GetIniKeyString("MdInfo", "DataDirPath", fullpath);
+	str = GetIniKeyString("TradeInfo", "DataDirPath", fullpath);
 	GetCurrentPath(dataDirPath, str);
 	strcat(dataDirPath, "/");    // api must need "/"
-	str = GetIniKeyString("MdInfo", "InvesterID", fullpath);
-	strcpy(gInvesterID, str);
-	str = GetIniKeyString("MdInfo", "InvesterPassword", fullpath);
-	strcpy(gInvesterPassword, str);
-	str = GetIniKeyString("MdInfo", "out", fullpath);
+	str = GetIniKeyString("TradeInfo", "out", fullpath);
 	clientID = atoi(str);
-	str = GetIniKeyString("MdInfo", "in", fullpath);
+	str = GetIniKeyString("TradeInfo", "in", fullpath);
 	serverID = atoi(str);
 
 	cout << mdFrontAddr << endl;
@@ -76,7 +78,9 @@ int main(int argc, char **argv)
 	init(argv[1]);
 
 	// wait trade message
-	customTradeApi->Wait();
+	while (1) {
+		customTradeApi->ListenRequest(NULL);
+	}
 
 	return 0;
 }

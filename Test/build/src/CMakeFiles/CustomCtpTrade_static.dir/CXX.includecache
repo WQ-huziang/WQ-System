@@ -39,8 +39,6 @@ server/UdpClient.h
 ../inc/myapi/server/UdpClient.h
 adapter/MdDataStruct.h
 ../inc/myapi/adapter/MdDataStruct.h
-pthread.h
--
 
 ../inc/server/UdpClient.h
 unistd.h

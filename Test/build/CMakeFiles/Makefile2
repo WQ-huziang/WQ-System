@@ -63,28 +63,32 @@ CMAKE_BINARY_DIR = /home/huziang/Desktop/api/Test/build
 # Directory level rules for directory src
 
 # Convenience name for "all" pass in the directory.
+src/all: src/CMakeFiles/strategy.dir/all
 src/all: src/CMakeFiles/CustomMd_static.dir/all
+src/all: src/CMakeFiles/CustomTrade.dir/all
+src/all: src/CMakeFiles/CustomCtpMd_static.dir/all
+src/all: src/CMakeFiles/CustomCtpMd.dir/all
 src/all: src/CMakeFiles/CustomCtpTrade.dir/all
 src/all: src/CMakeFiles/CustomMd.dir/all
+src/all: src/CMakeFiles/CustomTrade_static.dir/all
 src/all: src/CMakeFiles/mdserver.dir/all
 src/all: src/CMakeFiles/CustomCtpTrade_static.dir/all
 src/all: src/CMakeFiles/tradeserver.dir/all
-src/all: src/CMakeFiles/controlunit.dir/all
-src/all: src/CMakeFiles/CustomCtpMd_static.dir/all
-src/all: src/CMakeFiles/CustomCtpMd.dir/all
 
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
+src/clean: src/CMakeFiles/strategy.dir/clean
 src/clean: src/CMakeFiles/CustomMd_static.dir/clean
+src/clean: src/CMakeFiles/CustomTrade.dir/clean
+src/clean: src/CMakeFiles/CustomCtpMd_static.dir/clean
+src/clean: src/CMakeFiles/CustomCtpMd.dir/clean
 src/clean: src/CMakeFiles/CustomCtpTrade.dir/clean
 src/clean: src/CMakeFiles/CustomMd.dir/clean
+src/clean: src/CMakeFiles/CustomTrade_static.dir/clean
 src/clean: src/CMakeFiles/mdserver.dir/clean
 src/clean: src/CMakeFiles/CustomCtpTrade_static.dir/clean
 src/clean: src/CMakeFiles/tradeserver.dir/clean
-src/clean: src/CMakeFiles/controlunit.dir/clean
-src/clean: src/CMakeFiles/CustomCtpMd_static.dir/clean
-src/clean: src/CMakeFiles/CustomCtpMd.dir/clean
 
 .PHONY : src/clean
 
@@ -92,6 +96,46 @@ src/clean: src/CMakeFiles/CustomCtpMd.dir/clean
 src/preinstall:
 
 .PHONY : src/preinstall
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/strategy.dir
+
+# All Build rule for target.
+src/CMakeFiles/strategy.dir/all: src/CMakeFiles/CustomTrade.dir/all
+src/CMakeFiles/strategy.dir/all: src/CMakeFiles/CustomCtpMd.dir/all
+src/CMakeFiles/strategy.dir/all: src/CMakeFiles/CustomCtpTrade.dir/all
+src/CMakeFiles/strategy.dir/all: src/CMakeFiles/CustomMd.dir/all
+	$(MAKE) -f src/CMakeFiles/strategy.dir/build.make src/CMakeFiles/strategy.dir/depend
+	$(MAKE) -f src/CMakeFiles/strategy.dir/build.make src/CMakeFiles/strategy.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=19,20 "Built target strategy"
+.PHONY : src/CMakeFiles/strategy.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/strategy.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/strategy.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 10
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/strategy.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/strategy.dir/rule
+
+# Convenience name for target.
+strategy: src/CMakeFiles/strategy.dir/rule
+
+.PHONY : strategy
+
+# clean rule for target.
+src/CMakeFiles/strategy.dir/clean:
+	$(MAKE) -f src/CMakeFiles/strategy.dir/build.make src/CMakeFiles/strategy.dir/clean
+.PHONY : src/CMakeFiles/strategy.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/strategy.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/CustomMd_static.dir
@@ -127,6 +171,117 @@ src/CMakeFiles/CustomMd_static.dir/clean:
 
 # clean rule for target.
 clean: src/CMakeFiles/CustomMd_static.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/CustomTrade.dir
+
+# All Build rule for target.
+src/CMakeFiles/CustomTrade.dir/all:
+	$(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/depend
+	$(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=13,14 "Built target CustomTrade"
+.PHONY : src/CMakeFiles/CustomTrade.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/CustomTrade.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/CustomTrade.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomTrade.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/CustomTrade.dir/rule
+
+# Convenience name for target.
+CustomTrade: src/CMakeFiles/CustomTrade.dir/rule
+
+.PHONY : CustomTrade
+
+# clean rule for target.
+src/CMakeFiles/CustomTrade.dir/clean:
+	$(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/clean
+.PHONY : src/CMakeFiles/CustomTrade.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/CustomTrade.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/CustomCtpMd_static.dir
+
+# All Build rule for target.
+src/CMakeFiles/CustomCtpMd_static.dir/all:
+	$(MAKE) -f src/CMakeFiles/CustomCtpMd_static.dir/build.make src/CMakeFiles/CustomCtpMd_static.dir/depend
+	$(MAKE) -f src/CMakeFiles/CustomCtpMd_static.dir/build.make src/CMakeFiles/CustomCtpMd_static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=3,4 "Built target CustomCtpMd_static"
+.PHONY : src/CMakeFiles/CustomCtpMd_static.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/CustomCtpMd_static.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/CustomCtpMd_static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomCtpMd_static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/CustomCtpMd_static.dir/rule
+
+# Convenience name for target.
+CustomCtpMd_static: src/CMakeFiles/CustomCtpMd_static.dir/rule
+
+.PHONY : CustomCtpMd_static
+
+# clean rule for target.
+src/CMakeFiles/CustomCtpMd_static.dir/clean:
+	$(MAKE) -f src/CMakeFiles/CustomCtpMd_static.dir/build.make src/CMakeFiles/CustomCtpMd_static.dir/clean
+.PHONY : src/CMakeFiles/CustomCtpMd_static.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/CustomCtpMd_static.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/CustomCtpMd.dir
+
+# All Build rule for target.
+src/CMakeFiles/CustomCtpMd.dir/all:
+	$(MAKE) -f src/CMakeFiles/CustomCtpMd.dir/build.make src/CMakeFiles/CustomCtpMd.dir/depend
+	$(MAKE) -f src/CMakeFiles/CustomCtpMd.dir/build.make src/CMakeFiles/CustomCtpMd.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=1,2 "Built target CustomCtpMd"
+.PHONY : src/CMakeFiles/CustomCtpMd.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/CustomCtpMd.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/CustomCtpMd.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomCtpMd.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/CustomCtpMd.dir/rule
+
+# Convenience name for target.
+CustomCtpMd: src/CMakeFiles/CustomCtpMd.dir/rule
+
+.PHONY : CustomCtpMd
+
+# clean rule for target.
+src/CMakeFiles/CustomCtpMd.dir/clean:
+	$(MAKE) -f src/CMakeFiles/CustomCtpMd.dir/build.make src/CMakeFiles/CustomCtpMd.dir/clean
+.PHONY : src/CMakeFiles/CustomCtpMd.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/CustomCtpMd.dir/clean
 
 .PHONY : clean
 
@@ -205,15 +360,53 @@ clean: src/CMakeFiles/CustomMd.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target src/CMakeFiles/CustomTrade_static.dir
+
+# All Build rule for target.
+src/CMakeFiles/CustomTrade_static.dir/all:
+	$(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/depend
+	$(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=15,16 "Built target CustomTrade_static"
+.PHONY : src/CMakeFiles/CustomTrade_static.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/CustomTrade_static.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/CustomTrade_static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomTrade_static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/CustomTrade_static.dir/rule
+
+# Convenience name for target.
+CustomTrade_static: src/CMakeFiles/CustomTrade_static.dir/rule
+
+.PHONY : CustomTrade_static
+
+# clean rule for target.
+src/CMakeFiles/CustomTrade_static.dir/clean:
+	$(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/clean
+.PHONY : src/CMakeFiles/CustomTrade_static.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/CustomTrade_static.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/mdserver.dir
 
 # All Build rule for target.
+src/CMakeFiles/mdserver.dir/all: src/CMakeFiles/CustomTrade.dir/all
+src/CMakeFiles/mdserver.dir/all: src/CMakeFiles/CustomCtpMd.dir/all
 src/CMakeFiles/mdserver.dir/all: src/CMakeFiles/CustomCtpTrade.dir/all
 src/CMakeFiles/mdserver.dir/all: src/CMakeFiles/CustomMd.dir/all
-src/CMakeFiles/mdserver.dir/all: src/CMakeFiles/CustomCtpMd.dir/all
 	$(MAKE) -f src/CMakeFiles/mdserver.dir/build.make src/CMakeFiles/mdserver.dir/depend
 	$(MAKE) -f src/CMakeFiles/mdserver.dir/build.make src/CMakeFiles/mdserver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=15,16 "Built target mdserver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=17,18 "Built target mdserver"
 .PHONY : src/CMakeFiles/mdserver.dir/all
 
 # Include target in all.
@@ -223,7 +416,7 @@ all: src/CMakeFiles/mdserver.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/mdserver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/mdserver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/mdserver.dir/rule
@@ -284,12 +477,13 @@ clean: src/CMakeFiles/CustomCtpTrade_static.dir/clean
 # Target rules for target src/CMakeFiles/tradeserver.dir
 
 # All Build rule for target.
+src/CMakeFiles/tradeserver.dir/all: src/CMakeFiles/CustomTrade.dir/all
+src/CMakeFiles/tradeserver.dir/all: src/CMakeFiles/CustomCtpMd.dir/all
 src/CMakeFiles/tradeserver.dir/all: src/CMakeFiles/CustomCtpTrade.dir/all
 src/CMakeFiles/tradeserver.dir/all: src/CMakeFiles/CustomMd.dir/all
-src/CMakeFiles/tradeserver.dir/all: src/CMakeFiles/CustomCtpMd.dir/all
 	$(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/depend
 	$(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=17,18 "Built target tradeserver"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=21,22 "Built target tradeserver"
 .PHONY : src/CMakeFiles/tradeserver.dir/all
 
 # Include target in all.
@@ -299,7 +493,7 @@ all: src/CMakeFiles/tradeserver.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/tradeserver.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/tradeserver.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/tradeserver.dir/rule
@@ -316,119 +510,6 @@ src/CMakeFiles/tradeserver.dir/clean:
 
 # clean rule for target.
 clean: src/CMakeFiles/tradeserver.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/controlunit.dir
-
-# All Build rule for target.
-src/CMakeFiles/controlunit.dir/all: src/CMakeFiles/CustomCtpTrade.dir/all
-src/CMakeFiles/controlunit.dir/all: src/CMakeFiles/CustomMd.dir/all
-src/CMakeFiles/controlunit.dir/all: src/CMakeFiles/CustomCtpMd.dir/all
-	$(MAKE) -f src/CMakeFiles/controlunit.dir/build.make src/CMakeFiles/controlunit.dir/depend
-	$(MAKE) -f src/CMakeFiles/controlunit.dir/build.make src/CMakeFiles/controlunit.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=13,14 "Built target controlunit"
-.PHONY : src/CMakeFiles/controlunit.dir/all
-
-# Include target in all.
-all: src/CMakeFiles/controlunit.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/controlunit.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 8
-	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/controlunit.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/controlunit.dir/rule
-
-# Convenience name for target.
-controlunit: src/CMakeFiles/controlunit.dir/rule
-
-.PHONY : controlunit
-
-# clean rule for target.
-src/CMakeFiles/controlunit.dir/clean:
-	$(MAKE) -f src/CMakeFiles/controlunit.dir/build.make src/CMakeFiles/controlunit.dir/clean
-.PHONY : src/CMakeFiles/controlunit.dir/clean
-
-# clean rule for target.
-clean: src/CMakeFiles/controlunit.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/CustomCtpMd_static.dir
-
-# All Build rule for target.
-src/CMakeFiles/CustomCtpMd_static.dir/all:
-	$(MAKE) -f src/CMakeFiles/CustomCtpMd_static.dir/build.make src/CMakeFiles/CustomCtpMd_static.dir/depend
-	$(MAKE) -f src/CMakeFiles/CustomCtpMd_static.dir/build.make src/CMakeFiles/CustomCtpMd_static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=3,4 "Built target CustomCtpMd_static"
-.PHONY : src/CMakeFiles/CustomCtpMd_static.dir/all
-
-# Include target in all.
-all: src/CMakeFiles/CustomCtpMd_static.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/CustomCtpMd_static.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomCtpMd_static.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/CustomCtpMd_static.dir/rule
-
-# Convenience name for target.
-CustomCtpMd_static: src/CMakeFiles/CustomCtpMd_static.dir/rule
-
-.PHONY : CustomCtpMd_static
-
-# clean rule for target.
-src/CMakeFiles/CustomCtpMd_static.dir/clean:
-	$(MAKE) -f src/CMakeFiles/CustomCtpMd_static.dir/build.make src/CMakeFiles/CustomCtpMd_static.dir/clean
-.PHONY : src/CMakeFiles/CustomCtpMd_static.dir/clean
-
-# clean rule for target.
-clean: src/CMakeFiles/CustomCtpMd_static.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target src/CMakeFiles/CustomCtpMd.dir
-
-# All Build rule for target.
-src/CMakeFiles/CustomCtpMd.dir/all:
-	$(MAKE) -f src/CMakeFiles/CustomCtpMd.dir/build.make src/CMakeFiles/CustomCtpMd.dir/depend
-	$(MAKE) -f src/CMakeFiles/CustomCtpMd.dir/build.make src/CMakeFiles/CustomCtpMd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=1,2 "Built target CustomCtpMd"
-.PHONY : src/CMakeFiles/CustomCtpMd.dir/all
-
-# Include target in all.
-all: src/CMakeFiles/CustomCtpMd.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/CustomCtpMd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomCtpMd.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/huziang/Desktop/api/Test/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/CustomCtpMd.dir/rule
-
-# Convenience name for target.
-CustomCtpMd: src/CMakeFiles/CustomCtpMd.dir/rule
-
-.PHONY : CustomCtpMd
-
-# clean rule for target.
-src/CMakeFiles/CustomCtpMd.dir/clean:
-	$(MAKE) -f src/CMakeFiles/CustomCtpMd.dir/build.make src/CMakeFiles/CustomCtpMd.dir/clean
-.PHONY : src/CMakeFiles/CustomCtpMd.dir/clean
-
-# clean rule for target.
-clean: src/CMakeFiles/CustomCtpMd.dir/clean
 
 .PHONY : clean
 

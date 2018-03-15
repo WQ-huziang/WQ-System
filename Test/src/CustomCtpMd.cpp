@@ -317,6 +317,7 @@ void CustomCtpMd::OnRtnDepthMarketData(CThostFtdcDepthMarketDataField *pDepthMar
 	cout << "Instrument ID: " << pDepthMarketData->InstrumentID << endl;
 	cout << "Last Price: " << pDepthMarketData->LastPrice << endl;
 	cout << "Volume: " << pDepthMarketData->Volume << endl;
+	cout << "Turnover: " << pDepthMarketData->Turnover << endl;
 
 	// 如果只获取某一个合约行情，可以逐tick地存入文件或数据库
 	char filePath[100];

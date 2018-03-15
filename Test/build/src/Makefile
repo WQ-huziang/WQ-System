@@ -111,6 +111,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+src/CMakeFiles/strategy.dir/rule:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/strategy.dir/rule
+.PHONY : src/CMakeFiles/strategy.dir/rule
+
+# Convenience name for target.
+strategy: src/CMakeFiles/strategy.dir/rule
+
+.PHONY : strategy
+
+# fast build rule for target.
+strategy/fast:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/strategy.dir/build.make src/CMakeFiles/strategy.dir/build
+.PHONY : strategy/fast
+
+# Convenience name for target.
 src/CMakeFiles/CustomMd_static.dir/rule:
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomMd_static.dir/rule
 .PHONY : src/CMakeFiles/CustomMd_static.dir/rule
@@ -124,6 +139,51 @@ CustomMd_static: src/CMakeFiles/CustomMd_static.dir/rule
 CustomMd_static/fast:
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd_static.dir/build.make src/CMakeFiles/CustomMd_static.dir/build
 .PHONY : CustomMd_static/fast
+
+# Convenience name for target.
+src/CMakeFiles/CustomTrade.dir/rule:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomTrade.dir/rule
+.PHONY : src/CMakeFiles/CustomTrade.dir/rule
+
+# Convenience name for target.
+CustomTrade: src/CMakeFiles/CustomTrade.dir/rule
+
+.PHONY : CustomTrade
+
+# fast build rule for target.
+CustomTrade/fast:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/build
+.PHONY : CustomTrade/fast
+
+# Convenience name for target.
+src/CMakeFiles/CustomCtpMd_static.dir/rule:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomCtpMd_static.dir/rule
+.PHONY : src/CMakeFiles/CustomCtpMd_static.dir/rule
+
+# Convenience name for target.
+CustomCtpMd_static: src/CMakeFiles/CustomCtpMd_static.dir/rule
+
+.PHONY : CustomCtpMd_static
+
+# fast build rule for target.
+CustomCtpMd_static/fast:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomCtpMd_static.dir/build.make src/CMakeFiles/CustomCtpMd_static.dir/build
+.PHONY : CustomCtpMd_static/fast
+
+# Convenience name for target.
+src/CMakeFiles/CustomCtpMd.dir/rule:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomCtpMd.dir/rule
+.PHONY : src/CMakeFiles/CustomCtpMd.dir/rule
+
+# Convenience name for target.
+CustomCtpMd: src/CMakeFiles/CustomCtpMd.dir/rule
+
+.PHONY : CustomCtpMd
+
+# fast build rule for target.
+CustomCtpMd/fast:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomCtpMd.dir/build.make src/CMakeFiles/CustomCtpMd.dir/build
+.PHONY : CustomCtpMd/fast
 
 # Convenience name for target.
 src/CMakeFiles/CustomCtpTrade.dir/rule:
@@ -154,6 +214,21 @@ CustomMd: src/CMakeFiles/CustomMd.dir/rule
 CustomMd/fast:
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/build
 .PHONY : CustomMd/fast
+
+# Convenience name for target.
+src/CMakeFiles/CustomTrade_static.dir/rule:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomTrade_static.dir/rule
+.PHONY : src/CMakeFiles/CustomTrade_static.dir/rule
+
+# Convenience name for target.
+CustomTrade_static: src/CMakeFiles/CustomTrade_static.dir/rule
+
+.PHONY : CustomTrade_static
+
+# fast build rule for target.
+CustomTrade_static/fast:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/build
+.PHONY : CustomTrade_static/fast
 
 # Convenience name for target.
 src/CMakeFiles/mdserver.dir/rule:
@@ -199,51 +274,6 @@ tradeserver: src/CMakeFiles/tradeserver.dir/rule
 tradeserver/fast:
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/build
 .PHONY : tradeserver/fast
-
-# Convenience name for target.
-src/CMakeFiles/controlunit.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/controlunit.dir/rule
-.PHONY : src/CMakeFiles/controlunit.dir/rule
-
-# Convenience name for target.
-controlunit: src/CMakeFiles/controlunit.dir/rule
-
-.PHONY : controlunit
-
-# fast build rule for target.
-controlunit/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/controlunit.dir/build.make src/CMakeFiles/controlunit.dir/build
-.PHONY : controlunit/fast
-
-# Convenience name for target.
-src/CMakeFiles/CustomCtpMd_static.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomCtpMd_static.dir/rule
-.PHONY : src/CMakeFiles/CustomCtpMd_static.dir/rule
-
-# Convenience name for target.
-CustomCtpMd_static: src/CMakeFiles/CustomCtpMd_static.dir/rule
-
-.PHONY : CustomCtpMd_static
-
-# fast build rule for target.
-CustomCtpMd_static/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomCtpMd_static.dir/build.make src/CMakeFiles/CustomCtpMd_static.dir/build
-.PHONY : CustomCtpMd_static/fast
-
-# Convenience name for target.
-src/CMakeFiles/CustomCtpMd.dir/rule:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/CustomCtpMd.dir/rule
-.PHONY : src/CMakeFiles/CustomCtpMd.dir/rule
-
-# Convenience name for target.
-CustomCtpMd: src/CMakeFiles/CustomCtpMd.dir/rule
-
-.PHONY : CustomCtpMd
-
-# fast build rule for target.
-CustomCtpMd/fast:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomCtpMd.dir/build.make src/CMakeFiles/CustomCtpMd.dir/build
-.PHONY : CustomCtpMd/fast
 
 CustomCtpMd.o: CustomCtpMd.cpp.o
 
@@ -335,32 +365,35 @@ CustomMd.cpp.s:
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomMd.dir/build.make src/CMakeFiles/CustomMd.dir/CustomMd.cpp.s
 .PHONY : CustomMd.cpp.s
 
-controlunit/main.o: controlunit/main.cpp.o
+CustomTrade.o: CustomTrade.cpp.o
 
-.PHONY : controlunit/main.o
+.PHONY : CustomTrade.o
 
 # target to build an object file
-controlunit/main.cpp.o:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/controlunit.dir/build.make src/CMakeFiles/controlunit.dir/controlunit/main.cpp.o
-.PHONY : controlunit/main.cpp.o
+CustomTrade.cpp.o:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/CustomTrade.cpp.o
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/CustomTrade.cpp.o
+.PHONY : CustomTrade.cpp.o
 
-controlunit/main.i: controlunit/main.cpp.i
+CustomTrade.i: CustomTrade.cpp.i
 
-.PHONY : controlunit/main.i
+.PHONY : CustomTrade.i
 
 # target to preprocess a source file
-controlunit/main.cpp.i:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/controlunit.dir/build.make src/CMakeFiles/controlunit.dir/controlunit/main.cpp.i
-.PHONY : controlunit/main.cpp.i
+CustomTrade.cpp.i:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/CustomTrade.cpp.i
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/CustomTrade.cpp.i
+.PHONY : CustomTrade.cpp.i
 
-controlunit/main.s: controlunit/main.cpp.s
+CustomTrade.s: CustomTrade.cpp.s
 
-.PHONY : controlunit/main.s
+.PHONY : CustomTrade.s
 
 # target to generate assembly for a file
-controlunit/main.cpp.s:
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/controlunit.dir/build.make src/CMakeFiles/controlunit.dir/controlunit/main.cpp.s
-.PHONY : controlunit/main.cpp.s
+CustomTrade.cpp.s:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade.dir/build.make src/CMakeFiles/CustomTrade.dir/CustomTrade.cpp.s
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/CustomTrade_static.dir/build.make src/CMakeFiles/CustomTrade_static.dir/CustomTrade.cpp.s
+.PHONY : CustomTrade.cpp.s
 
 mdserver/main.o: mdserver/main.cpp.o
 
@@ -369,7 +402,6 @@ mdserver/main.o: mdserver/main.cpp.o
 # target to build an object file
 mdserver/main.cpp.o:
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/mdserver.dir/build.make src/CMakeFiles/mdserver.dir/mdserver/main.cpp.o
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o
 .PHONY : mdserver/main.cpp.o
 
 mdserver/main.i: mdserver/main.cpp.i
@@ -379,7 +411,6 @@ mdserver/main.i: mdserver/main.cpp.i
 # target to preprocess a source file
 mdserver/main.cpp.i:
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/mdserver.dir/build.make src/CMakeFiles/mdserver.dir/mdserver/main.cpp.i
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.i
 .PHONY : mdserver/main.cpp.i
 
 mdserver/main.s: mdserver/main.cpp.s
@@ -389,8 +420,61 @@ mdserver/main.s: mdserver/main.cpp.s
 # target to generate assembly for a file
 mdserver/main.cpp.s:
 	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/mdserver.dir/build.make src/CMakeFiles/mdserver.dir/mdserver/main.cpp.s
-	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.s
 .PHONY : mdserver/main.cpp.s
+
+strategy/main.o: strategy/main.cpp.o
+
+.PHONY : strategy/main.o
+
+# target to build an object file
+strategy/main.cpp.o:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/strategy.dir/build.make src/CMakeFiles/strategy.dir/strategy/main.cpp.o
+.PHONY : strategy/main.cpp.o
+
+strategy/main.i: strategy/main.cpp.i
+
+.PHONY : strategy/main.i
+
+# target to preprocess a source file
+strategy/main.cpp.i:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/strategy.dir/build.make src/CMakeFiles/strategy.dir/strategy/main.cpp.i
+.PHONY : strategy/main.cpp.i
+
+strategy/main.s: strategy/main.cpp.s
+
+.PHONY : strategy/main.s
+
+# target to generate assembly for a file
+strategy/main.cpp.s:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/strategy.dir/build.make src/CMakeFiles/strategy.dir/strategy/main.cpp.s
+.PHONY : strategy/main.cpp.s
+
+tradeserver/main.o: tradeserver/main.cpp.o
+
+.PHONY : tradeserver/main.o
+
+# target to build an object file
+tradeserver/main.cpp.o:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o
+.PHONY : tradeserver/main.cpp.o
+
+tradeserver/main.i: tradeserver/main.cpp.i
+
+.PHONY : tradeserver/main.i
+
+# target to preprocess a source file
+tradeserver/main.cpp.i:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.i
+.PHONY : tradeserver/main.cpp.i
+
+tradeserver/main.s: tradeserver/main.cpp.s
+
+.PHONY : tradeserver/main.s
+
+# target to generate assembly for a file
+tradeserver/main.cpp.s:
+	cd /home/huziang/Desktop/api/Test/build && $(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.s
+.PHONY : tradeserver/main.cpp.s
 
 # Help Target
 help:
@@ -399,16 +483,18 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... strategy"
 	@echo "... CustomMd_static"
+	@echo "... CustomTrade"
+	@echo "... rebuild_cache"
+	@echo "... CustomCtpMd_static"
+	@echo "... CustomCtpMd"
 	@echo "... CustomCtpTrade"
 	@echo "... CustomMd"
+	@echo "... CustomTrade_static"
 	@echo "... mdserver"
 	@echo "... CustomCtpTrade_static"
 	@echo "... tradeserver"
-	@echo "... controlunit"
-	@echo "... CustomCtpMd_static"
-	@echo "... CustomCtpMd"
-	@echo "... rebuild_cache"
 	@echo "... CustomCtpMd.o"
 	@echo "... CustomCtpMd.i"
 	@echo "... CustomCtpMd.s"
@@ -418,12 +504,18 @@ help:
 	@echo "... CustomMd.o"
 	@echo "... CustomMd.i"
 	@echo "... CustomMd.s"
-	@echo "... controlunit/main.o"
-	@echo "... controlunit/main.i"
-	@echo "... controlunit/main.s"
+	@echo "... CustomTrade.o"
+	@echo "... CustomTrade.i"
+	@echo "... CustomTrade.s"
 	@echo "... mdserver/main.o"
 	@echo "... mdserver/main.i"
 	@echo "... mdserver/main.s"
+	@echo "... strategy/main.o"
+	@echo "... strategy/main.i"
+	@echo "... strategy/main.s"
+	@echo "... tradeserver/main.o"
+	@echo "... tradeserver/main.i"
+	@echo "... tradeserver/main.s"
 .PHONY : help
 
 

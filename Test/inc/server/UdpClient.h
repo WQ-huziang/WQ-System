@@ -39,15 +39,16 @@ struct UdpClient {
 		shutdown(client_sockfd, SHUT_RDWR);  
 	}
 
-	bool sendUdpPackage() {
+	bool sendUdpPackage(int length) {
         mylock->wait();
         mylock->inlock();
-    	printf("sending: '%s'\n",buf);
+    	printf("sending length: %d\n", length);
       
     	// send to 
-    	if((len=sendto(client_sockfd,buf,strlen(buf),0,(struct sockaddr *)&send_addr,sizeof(struct sockaddr)))<0)  
-    	{  
-        	perror("recvfrom"); 
+    	if((len=sendto(client_sockfd,buf,length,0,(struct sockaddr *)&send_addr,sizeof(struct sockaddr)))<0)  
+    	{
+            //fprintf(stderr, "Error code:%d\n", errno);
+        	perror("send error"); 
             mylock->unlock();  
         	return false;
     	}
@@ -55,9 +56,9 @@ struct UdpClient {
     	return true;
 	}
 
-    bool sendUdpPackage(const char* message) {
-        strcpy(buf, message);
-        return sendUdpPackage();
+    bool sendUdpPackage(const char* message, int length) {
+        memcpy(buf, message, length);
+        return sendUdpPackage(length);
     }
 
 	char *getData() {

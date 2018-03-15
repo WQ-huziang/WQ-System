@@ -57,42 +57,43 @@ include src/CMakeFiles/tradeserver.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/tradeserver.dir/flags.make
 
-src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o: src/CMakeFiles/tradeserver.dir/flags.make
-src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o: ../src/mdserver/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o"
-	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tradeserver.dir/mdserver/main.cpp.o -c /home/huziang/Desktop/api/Test/src/mdserver/main.cpp
+src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o: src/CMakeFiles/tradeserver.dir/flags.make
+src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o: ../src/tradeserver/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o"
+	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o -c /home/huziang/Desktop/api/Test/src/tradeserver/main.cpp
 
-src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tradeserver.dir/mdserver/main.cpp.i"
-	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/huziang/Desktop/api/Test/src/mdserver/main.cpp > CMakeFiles/tradeserver.dir/mdserver/main.cpp.i
+src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tradeserver.dir/tradeserver/main.cpp.i"
+	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/huziang/Desktop/api/Test/src/tradeserver/main.cpp > CMakeFiles/tradeserver.dir/tradeserver/main.cpp.i
 
-src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tradeserver.dir/mdserver/main.cpp.s"
-	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/huziang/Desktop/api/Test/src/mdserver/main.cpp -o CMakeFiles/tradeserver.dir/mdserver/main.cpp.s
+src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tradeserver.dir/tradeserver/main.cpp.s"
+	cd /home/huziang/Desktop/api/Test/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/huziang/Desktop/api/Test/src/tradeserver/main.cpp -o CMakeFiles/tradeserver.dir/tradeserver/main.cpp.s
 
-src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o.requires:
+src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o.requires:
 
-.PHONY : src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o.requires
+.PHONY : src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o.requires
 
-src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o.provides: src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o.requires
-	$(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o.provides.build
-.PHONY : src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o.provides
+src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o.provides: src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/tradeserver.dir/build.make src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o.provides.build
+.PHONY : src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o.provides
 
-src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o.provides.build: src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o
+src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o.provides.build: src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o
 
 
 # Object files for target tradeserver
 tradeserver_OBJECTS = \
-"CMakeFiles/tradeserver.dir/mdserver/main.cpp.o"
+"CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o"
 
 # External object files for target tradeserver
 tradeserver_EXTERNAL_OBJECTS =
 
-../bin/tradeserver: src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o
+../bin/tradeserver: src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o
 ../bin/tradeserver: src/CMakeFiles/tradeserver.dir/build.make
 ../bin/tradeserver: ../lib/libCustomCtpMd.so.1.2
 ../bin/tradeserver: ../lib/libCustomMd.so.1.2
 ../bin/tradeserver: ../lib/libCustomCtpTrade.so.1.2
+../bin/tradeserver: ../lib/libCustomTrade.so.1.2
 ../bin/tradeserver: src/CMakeFiles/tradeserver.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/huziang/Desktop/api/Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/tradeserver"
 	cd /home/huziang/Desktop/api/Test/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tradeserver.dir/link.txt --verbose=$(VERBOSE)
@@ -102,7 +103,7 @@ src/CMakeFiles/tradeserver.dir/build: ../bin/tradeserver
 
 .PHONY : src/CMakeFiles/tradeserver.dir/build
 
-src/CMakeFiles/tradeserver.dir/requires: src/CMakeFiles/tradeserver.dir/mdserver/main.cpp.o.requires
+src/CMakeFiles/tradeserver.dir/requires: src/CMakeFiles/tradeserver.dir/tradeserver/main.cpp.o.requires
 
 .PHONY : src/CMakeFiles/tradeserver.dir/requires
 

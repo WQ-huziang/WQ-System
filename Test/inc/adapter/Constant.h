@@ -8,6 +8,8 @@
 #ifndef CONSTANT_H
 #define CONSTANT_H
 
+#define TRAN_FLAG_LEN 4
+
 typedef char ControlFlagType;
 
 /////////////////////////////////

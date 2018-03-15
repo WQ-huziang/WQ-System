@@ -13,5 +13,5 @@ CustomMd::~CustomMd() {
 
 void CustomMd::OnGetMarketData(const WZMarketDataField &mddata) {
 	WZMarketDataField::toString(client->buf, mddata);
-	client->sendUdpPackage();
+	client->sendUdpPackage(sizeof(mddata));
 }

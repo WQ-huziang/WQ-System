@@ -54,63 +54,11 @@ struct WZMarketDataField
 	char undefined[100];
 
 	static void toString(char *buf, const WZMarketDataField &ori) {
-		char *temp = buf;
-		temp = toBuf(temp, ori.TradingDay);
-		temp = toBuf(temp, ori.InstrumentID);
-		temp = toBuf(temp, ori.ExchangeID);
-		temp = toBuf(temp, ori.ExchangeInstID);
-		temp = toBuf(temp, ori.LastPrice);
-		temp = toBuf(temp, ori.PreSettlementPrice);
-		temp = toBuf(temp, ori.PreClosePrice);
-		temp = toBuf(temp, ori.PreOpenInterest);
-		temp = toBuf(temp, ori.OpenPrice);
-		temp = toBuf(temp, ori.HighestPrice);
-		temp = toBuf(temp, ori.LowestPrice);
-		temp = toBuf(temp, ori.Volume);
-		temp = toBuf(temp, ori.Turnover);
-		temp = toBuf(temp, ori.OpenInterest);
-		temp = toBuf(temp, ori.ClosePrice);
-		temp = toBuf(temp, ori.SettlementPrice);
-		temp = toBuf(temp, ori.UpperLimitPrice);
-		temp = toBuf(temp, ori.LowerLimitPrice);
-		temp = toBuf(temp, ori.PreDelta);
-		temp = toBuf(temp, ori.UpdateTime);
-		temp = toBuf(temp, ori.UpdateMillisec);
-		temp = toBuf(temp, ori.BidPrice1);
-		temp = toBuf(temp, ori.BidVolume1);
-		temp = toBuf(temp, ori.AskPrice1);
-		temp = toBuf(temp, ori.AskVolume1);
-		temp = toBuf(temp, ori.undefined);
+		memcpy((void*)buf, (void*)&ori, sizeof(ori));
 	}
 
-	static void fromString(WZMarketDataField &ori, char *buf) {
-		char *temp = buf;
-		temp = fromBuf(temp, ori.TradingDay);
-		temp = fromBuf(temp, ori.InstrumentID);
-		temp = fromBuf(temp, ori.ExchangeID);
-		temp = fromBuf(temp, ori.ExchangeInstID);
-		temp = fromBuf(temp, ori.LastPrice);
-		temp = fromBuf(temp, ori.PreSettlementPrice);
-		temp = fromBuf(temp, ori.PreClosePrice);
-		temp = fromBuf(temp, ori.PreOpenInterest);
-		temp = fromBuf(temp, ori.OpenPrice);
-		temp = fromBuf(temp, ori.HighestPrice);
-		temp = fromBuf(temp, ori.LowestPrice);
-		temp = fromBuf(temp, ori.Volume);
-		temp = fromBuf(temp, ori.Turnover);
-		temp = fromBuf(temp, ori.OpenInterest);
-		temp = fromBuf(temp, ori.ClosePrice);
-		temp = fromBuf(temp, ori.SettlementPrice);
-		temp = fromBuf(temp, ori.UpperLimitPrice);
-		temp = fromBuf(temp, ori.LowerLimitPrice);
-		temp = fromBuf(temp, ori.PreDelta);
-		temp = fromBuf(temp, ori.UpdateTime);
-		temp = fromBuf(temp, ori.UpdateMillisec);
-		temp = fromBuf(temp, ori.BidPrice1);
-		temp = fromBuf(temp, ori.BidVolume1);
-		temp = fromBuf(temp, ori.AskPrice1);
-		temp = fromBuf(temp, ori.AskVolume1);
-		temp = fromBuf(temp, ori.undefined);
+	static void fromString(WZMarketDataField &ori, const char *buf) {
+		memcpy((void*)&ori, (void*)buf, sizeof(ori));
 	}
 };
 
@@ -138,49 +86,11 @@ struct WZInputOrderField
 	char undefined[100];
 
 	static void toString(char *buf, const WZInputOrderField &ori) {
-		char *temp = buf;
-		temp = toBuf(temp, ori.BrokerID);
-		temp = toBuf(temp, ori.UserID);
-		temp = toBuf(temp, ori.InvestorID);
-		temp = toBuf(temp, ori.ExchangeID);
-		temp = toBuf(temp, ori.InstrumentID);
-		temp = toBuf(temp, ori.OrderRef);
-		temp = toBuf(temp, ori.LimitPrice);
-		temp = toBuf(temp, ori.Volume);
-		temp = toBuf(temp, ori.MinVolume);
-		temp = toBuf(temp, ori.ActionFlag);
-		temp = toBuf(temp, ori.VolumeCondition);
-		temp = toBuf(temp, ori.OrderPriceType);
-		temp = toBuf(temp, ori.Direction);
-		temp = toBuf(temp, ori.OffsetFlag);
-		temp = toBuf(temp, ori.HedgeFlag);
-		temp = toBuf(temp, ori.ForceCloseReason);
-		temp = toBuf(temp, ori.StopPrice);
-		temp = toBuf(temp, ori.IsAutoSuspend);
-		temp = toBuf(temp, ori.undefined);
+		memcpy((void*)buf, (void*)&ori, sizeof(ori));
 	}
 
-	static void fromString(WZInputOrderField &ori, char *buf) {
-		char *temp = buf;
-		temp = fromBuf(temp, ori.BrokerID);
-		temp = fromBuf(temp, ori.UserID);
-		temp = fromBuf(temp, ori.InvestorID);
-		temp = fromBuf(temp, ori.ExchangeID);
-		temp = fromBuf(temp, ori.InstrumentID);
-		temp = fromBuf(temp, ori.OrderRef);
-		temp = fromBuf(temp, ori.LimitPrice);
-		temp = fromBuf(temp, ori.Volume);
-		temp = fromBuf(temp, ori.MinVolume);
-		temp = fromBuf(temp, ori.ActionFlag);
-		temp = fromBuf(temp, ori.VolumeCondition);
-		temp = fromBuf(temp, ori.OrderPriceType);
-		temp = fromBuf(temp, ori.Direction);
-		temp = fromBuf(temp, ori.OffsetFlag);
-		temp = fromBuf(temp, ori.HedgeFlag);
-		temp = fromBuf(temp, ori.ForceCloseReason);
-		temp = fromBuf(temp, ori.StopPrice);
-		temp = fromBuf(temp, ori.IsAutoSuspend);
-		temp = fromBuf(temp, ori.undefined);
+	static void fromString(WZInputOrderField &ori, const char *buf) {
+		memcpy((void*)&ori, (void*)buf, sizeof(ori));
 	}
 };
 

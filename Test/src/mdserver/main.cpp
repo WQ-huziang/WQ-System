@@ -20,9 +20,9 @@ int serverID;
 
 // Md values
 CustomMd *customMdApi;                                             // my custom api
-TThostFtdcBrokerIDType gCompanyID = "9999";                        // company ID
-TThostFtdcInvestorIDType gInvesterID = "112586";                   // user ID
-TThostFtdcPasswordType gInvesterPassword = "821361187";            // user password
+TThostFtdcBrokerIDType gCompanyID;                                 // company ID
+TThostFtdcInvestorIDType gInvesterID;                              // user ID
+TThostFtdcPasswordType gInvesterPassword;                          // user password
 char mdFrontAddr[MAX_LEN];                                         // Md front address
 char dataDirPath[MAX_LEN];                                         // stored data dictionary path
 char pInstrumentIDStr[MAX_LEN * ID_LEN];                           // stock ID string
@@ -39,10 +39,16 @@ void init(char *filepath) {
 	char fullpath[MAX_LEN];
 	GetCurrentPath(fullpath, filepath);
 
-	cout << fullpath << endl;
+	cout << "Configfile path: " << fullpath << endl;
 
 	// get file values
 	char *str;
+    str = GetIniKeyString("Public", "BrokerID", fullpath);
+    strcpy(gCompanyID, str);
+	str = GetIniKeyString("Public", "InvesterID", fullpath);
+	strcpy(gInvesterID, str);
+	str = GetIniKeyString("Public", "InvesterPassword", fullpath);
+	strcpy(gInvesterPassword, str);
 	str = GetIniKeyString("MdInfo", "FrontAddr", fullpath);
 	strcpy(mdFrontAddr, str);
 	str = GetIniKeyString("MdInfo", "DataDirPath", fullpath);

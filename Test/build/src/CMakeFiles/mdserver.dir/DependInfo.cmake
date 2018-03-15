@@ -18,6 +18,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/huziang/Desktop/api/Test/build/src/CMakeFiles/CustomCtpMd.dir/DependInfo.cmake"
   "/home/huziang/Desktop/api/Test/build/src/CMakeFiles/CustomMd.dir/DependInfo.cmake"
   "/home/huziang/Desktop/api/Test/build/src/CMakeFiles/CustomCtpTrade.dir/DependInfo.cmake"
+  "/home/huziang/Desktop/api/Test/build/src/CMakeFiles/CustomTrade.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

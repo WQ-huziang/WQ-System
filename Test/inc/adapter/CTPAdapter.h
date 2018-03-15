@@ -52,7 +52,7 @@ inline CThostFtdcInputOrderField parseTo(WZInputOrderField &ori) {
 	///合约代码
 	strcpy(orderActionReq.InstrumentID, ori.InstrumentID);
 	///报单引用
-	strcpy(orderActionReq.OrderRef, ori.OrderRef);
+	//strcpy(orderActionReq.OrderRef, ori.OrderRef);
 	///报单价格条件: 限价
 	orderActionReq.OrderPriceType = THOST_FTDC_OPT_LimitPrice;
 	///买卖方向: 
