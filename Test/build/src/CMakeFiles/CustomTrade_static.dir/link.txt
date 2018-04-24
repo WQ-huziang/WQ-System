@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libCustomTrade.a  CMakeFiles/CustomTrade_static.dir/CustomTrade.cpp.o
-/usr/bin/ranlib ../../lib/libCustomTrade.a

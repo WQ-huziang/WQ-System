@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -std=c++11 -g  -shared -Wl,-soname,libCustomCtpMd.so.1 -o ../../lib/libCustomCtpMd.so.1.2 CMakeFiles/CustomCtpMd.dir/CustomCtpMd.cpp.o  -L/home/huziang/Desktop/api/Test/lib 

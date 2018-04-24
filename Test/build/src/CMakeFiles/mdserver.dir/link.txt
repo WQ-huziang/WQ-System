@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11 -g   CMakeFiles/mdserver.dir/mdserver/main.cpp.o  -o ../../bin/mdserver  -L/home/huziang/Desktop/api/Test/lib ../../lib/libCustomCtpMd.so.1.2 ../../lib/libCustomMd.so.1.2 ../../lib/libCustomCtpTrade.so.1.2 ../../lib/libCustomTrade.so.1.2 -lthostmduserapi -lthosttraderapi -Wl,-rpath,/home/huziang/Desktop/api/Test/lib 

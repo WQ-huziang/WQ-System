@@ -1,1 +1,0 @@
-/usr/bin/c++   -std=c++11 -g   CMakeFiles/MdReceiver.dir/MdReceiver.cpp.o  -o ../../bin/MdReceiver  -L/home/huziang/Desktop/api/Test/lib ../../lib/libCustomMd.so.1.2 ../../lib/libCustomTrade.so.1.2 -lthostmduserapi -lthosttraderapi -Wl,-rpath,/home/huziang/Desktop/api/Test/lib 

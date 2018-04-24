@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -std=c++11 -g  -shared -Wl,-soname,libStrategyTrade.so.1 -o ../../lib/libStrategyTrade.so.1.2 CMakeFiles/StrategyTrade.dir/StrategyTrade.cpp.o 

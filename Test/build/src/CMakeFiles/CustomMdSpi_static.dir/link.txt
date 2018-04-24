@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libCustomMdSpi.a  CMakeFiles/CustomMdSpi_static.dir/CustomMdSpi.cpp.o
-/usr/bin/ranlib ../../lib/libCustomMdSpi.a

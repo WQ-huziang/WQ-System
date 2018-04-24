@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libCustomMd.a  CMakeFiles/CustomMd_static.dir/CustomMd.cpp.o
-/usr/bin/ranlib ../../lib/libCustomMd.a

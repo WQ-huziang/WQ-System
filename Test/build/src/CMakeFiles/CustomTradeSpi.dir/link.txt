@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -std=c++11 -g  -shared -Wl,-soname,libCustomTradeSpi.so.1 -o ../../lib/libCustomTradeSpi.so.1.2 CMakeFiles/CustomTradeSpi.dir/CustomTradeSpi.cpp.o 
